@@ -56,8 +56,21 @@
 	position: fixed;
 	top: 50%;
 	left: 0;
+	font-size:1.5rem;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 	padding: 1em;
 	z-index: 6;
+	background:#fff;
+	-webkit-border-top-right-radius: 100px;
+	-webkit-border-bottom-right-radius: 100px;
+	-moz-border-radius-topright: 100px;
+	-moz-border-radius-bottomright: 100px;
+	border-top-right-radius: 100px;
+	border-bottom-right-radius: 100px;
+}
+
+ul {
+	list-style-type: none;
+	text-align: center;
 }

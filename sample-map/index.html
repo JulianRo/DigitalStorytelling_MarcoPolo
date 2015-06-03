@@ -14,10 +14,8 @@
     <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/smoothscroll.js"></script>
-
-
-
-    <script>
+   	<script>
+    // script for Leaflet map
       function init() {
         var mapMinZoom = 3;
         var mapMaxZoom = 4;
@@ -62,18 +60,17 @@
   </head>
   <body onload="init()">
   
+  <!-- Off-canvas menu -->
   <a href="#" class="off-canvas-trigger" id="js-off-canvas-trigger">Info</a>
   <div class="off-canvas-content" id="js-off-canvas-content">
   	<a href="#" class="off-canvas-close" id="js-off-canvas-close">×</a>
   	<ul>
-  		<li><img src="img/testikuva.svg" alt="Kashgar"></li>
-  		<li><img src="img/testikuva2.svg" alt="Kashgar"></li>
-  		<li>Item 3</li>
+  		<li><img src="img/testikuva.svg" alt="Kashgar"> <br> <p>City 1</p></li>
+  		<li><img src="img/testikuva2.svg" alt="Kashgar"> <p>City 2</p></li>
   	</ul>
   </div>
 
-
- <!-- first "page" -->
+ <!-- first page -->
     <div class="on-top-of-menu">
       <div id="welcome">
         <h2>The adventures of Marco Polo</h2>
@@ -85,6 +82,7 @@
 <!-- map -->
  	<div id="map"></div>
 
+<!-- jquery for off-canvas menu-->
  	<script>
  		// initialize navigation
 	    $("#js-off-canvas-trigger, #js-off-canvas-close").on("click", function(event) {
