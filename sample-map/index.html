@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
     <![endif]-->
     <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/smoothscroll.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/smoothscroll.js"></script>
 
 
 
@@ -40,10 +40,10 @@
         }).addTo(map);
 
         var kashgarIcon = L.icon({
-          iconUrl: './img/kashgar-icon.png',
-          iconRetinaUrl: './img/kashgar-icon.png',
-          iconSize: [50, 50],
-          iconAnchor: [25, 25],
+          iconUrl: './img/testikuva.svg',
+          iconRetinaUrl: './img/testikuva.svg',
+          iconSize: [370, 305],
+          iconAnchor: [180, 150],
           popupAnchor: [0, 0],
           shadowUrl: null,
           shadowRetinaUrl: null,
@@ -61,18 +61,37 @@
     </style>
   </head>
   <body onload="init()">
-    
+  
+  <a href="#" class="off-canvas-trigger" id="js-off-canvas-trigger">Info</a>
+  <div class="off-canvas-content" id="js-off-canvas-content">
+  	<a href="#" class="off-canvas-close" id="js-off-canvas-close">×</a>
+  	<ul>
+  		<li><img src="img/testikuva.svg" alt="Kashgar"></li>
+  		<li><img src="img/testikuva2.svg" alt="Kashgar"></li>
+  		<li>Item 3</li>
+  	</ul>
+  </div>
+
+
  <!-- first "page" -->
-    <div class="row">
+    <div class="on-top-of-menu">
       <div id="welcome">
         <h2>The adventures of Marco Polo</h2>
-        <p>This really needs some CSS and nice images.</p>
+        <p>Image here!</p>
         <a href="#map" class="smoothScroll" id="explore">Explore</a>
       </div>
     </div>
 
 <!-- map -->
  	<div id="map"></div>
+
+ 	<script>
+ 		// initialize navigation
+	    $("#js-off-canvas-trigger, #js-off-canvas-close").on("click", function(event) {
+			event.preventDefault();
+			$("#js-off-canvas-content").toggleClass("is-open");
+		});
+ 	</script>
 
   </body>
 </html>
