@@ -1,0 +1,15 @@
+#map { 
+  height:100%;
+  width:100%;
+  background-color: #565656;
+}
+
+ #welcome { 
+  height:100vh;
+  background-color: #fff;
+  text-align:center;
+}
+
+#explore {
+	font-size: 2.3rem;
+}

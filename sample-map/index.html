@@ -6,13 +6,20 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
     <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
     <![endif]-->
     <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/smoothscroll.js"></script>
+
+
+
     <script>
       function init() {
-        var mapMinZoom = 1;
+        var mapMinZoom = 3;
         var mapMaxZoom = 4;
         var map = L.map('map', {
           maxZoom: mapMaxZoom,
@@ -46,7 +53,8 @@
 
       L.marker([-120, 150], {icon: kashgarIcon}).addTo(map).bindPopup('A pretty CSS3 <b>popup</b>. <br> Easily customizable.');
       L.marker([-80, 20], {icon: kashgarIcon}).addTo(map).bindPopup('My second marker');
-      }
+     }
+
     </script>
     <style>
       html, body, #map { width: calc(100%); height:100%; margin:0; padding:0; }
@@ -54,13 +62,17 @@
   </head>
   <body onload="init()">
     
+ <!-- first "page" -->
     <div class="row">
       <div id="welcome">
-        <h2>Hey world!</h2>
+        <h2>The adventures of Marco Polo</h2>
+        <p>This really needs some CSS and nice images.</p>
+        <a href="#map" class="smoothScroll" id="explore">Explore</a>
       </div>
     </div>
-    
-    <div id="map"></div>
+
+<!-- map -->
+ 	<div id="map"></div>
 
   </body>
 </html>
