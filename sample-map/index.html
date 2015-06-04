@@ -18,7 +18,8 @@
     // script for Leaflet map
       var map;
       var kashgarPosition = [-100, 120];
-      
+      var arcePosition = [-10, 90];
+
       function init() {
         var mapMinZoom = 3;
         var mapMaxZoom = 5;
@@ -52,9 +53,9 @@
           shadowAnchor: [0, 0]
       });
 
-         var VeniceIcon = L.icon({
-          iconUrl: './img/City_Icons-01',
-          iconRetinaUrl: './img/City_Icons-01',
+         var arceIcon = L.icon({
+          iconUrl: './img/acre.svg',
+          iconRetinaUrl: './img/acre.svg',
           iconSize: [370, 305],
           iconAnchor: [180, 150],
           popupAnchor: [0, 0],
@@ -65,7 +66,7 @@
       });
 
       L.marker(kashgarPosition, {icon: kashgarIcon}).addTo(map).bindPopup('A pretty CSS3 <b>popup</b>. <br> Easily customizable.');
-      // L.marker([-80, 20], {icon: kashgarIcon}).addTo(map).bindPopup('My second marker');
+      L.marker(acrePosition, {icon: acreIcon}).addTo(map).bindPopup('My second marker');
      }
 
     </script>
