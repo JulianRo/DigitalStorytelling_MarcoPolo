@@ -29,8 +29,8 @@
         }).setView([0, 0], mapMaxZoom);
         
         var mapBounds = new L.LatLngBounds(
-            map.unproject([0, 4096], mapMaxZoom),
-            map.unproject([4096, 0], mapMaxZoom));
+            map.unproject([0, 5792], mapMaxZoom),
+            map.unproject([8192, 0], mapMaxZoom));
             
         map.fitBounds(mapBounds);
         L.tileLayer('{z}/{x}/{y}.png', {
@@ -43,6 +43,18 @@
         var kashgarIcon = L.icon({
           iconUrl: './img/testikuva.svg',
           iconRetinaUrl: './img/testikuva.svg',
+          iconSize: [370, 305],
+          iconAnchor: [180, 150],
+          popupAnchor: [0, 0],
+          shadowUrl: null,
+          shadowRetinaUrl: null,
+          shadowSize: [0, 0],
+          shadowAnchor: [0, 0]
+      });
+
+         var VeniceIcon = L.icon({
+          iconUrl: './img/City_Icons-01',
+          iconRetinaUrl: './img/City_Icons-01',
           iconSize: [370, 305],
           iconAnchor: [180, 150],
           popupAnchor: [0, 0],
