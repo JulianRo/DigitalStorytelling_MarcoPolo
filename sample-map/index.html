@@ -12,13 +12,19 @@
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
     <![endif]-->
     <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script type="text/javascript" src="js/smoothscroll.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="js/smoothscroll.js"></script>
    	    <script>
     // script for Leaflet map
       var map;
-      var kashgarPosition = [-100, 120];
-      var arcePosition = [-10, 90];
+      var venicePosition = [-42, 50];
+      var acrePosition = [-55, 82];
+      var jerusalemPosition = [-60, 85];
+      var ormusPosition = [-65, 115];
+      var balkhPosition = [-50, 120];
+      var kashgarPosition = [-50, 150];
+      var shangduPosition = [-40, 195];
 
       function init() {
         var mapMinZoom = 3;
@@ -26,9 +32,10 @@
         map = L.map('map', {
           maxZoom: mapMaxZoom,
           minZoom: mapMinZoom,
+          zoomControl: false,
           crs: L.CRS.Simple
         }).setView([0, 0], mapMaxZoom);
-        
+
         var mapBounds = new L.LatLngBounds(
             map.unproject([0, 5792], mapMaxZoom),
             map.unproject([8192, 0], mapMaxZoom));
@@ -41,11 +48,24 @@
           noWrap: true          
         }).addTo(map);
 
-        var kashgarIcon = L.icon({
-          iconUrl: './img/testikuva.svg',
-          iconRetinaUrl: './img/testikuva.svg',
-          iconSize: [370, 305],
-          iconAnchor: [180, 150],
+      //set the zoom control to top right corner:
+        var zoomControl = L.control.zoom({
+            position: 'topright',
+        });
+          map.addControl(zoomControl);
+
+        var loadingControl = L.Control.loading({
+            position: 'topright',
+            zoomControl: zoomControl,
+        });
+          map.addControl(loadingControl);
+
+      //add the city icons:
+         var veniceIcon = L.icon({
+          iconUrl: './img/venice.svg',
+          iconRetinaUrl: './img/venice.svg',
+          iconSize: [200, 305],
+          iconAnchor: [150, 150],
           popupAnchor: [0, 0],
           shadowUrl: null,
           shadowRetinaUrl: null,
@@ -53,11 +73,11 @@
           shadowAnchor: [0, 0]
       });
 
-         var arceIcon = L.icon({
+         var acreIcon = L.icon({
           iconUrl: './img/acre.svg',
           iconRetinaUrl: './img/acre.svg',
-          iconSize: [370, 305],
-          iconAnchor: [180, 150],
+          iconSize: [200, 305],
+          iconAnchor: [150, 150],
           popupAnchor: [0, 0],
           shadowUrl: null,
           shadowRetinaUrl: null,
@@ -65,8 +85,74 @@
           shadowAnchor: [0, 0]
       });
 
-      L.marker(kashgarPosition, {icon: kashgarIcon}).addTo(map).bindPopup('A pretty CSS3 <b>popup</b>. <br> Easily customizable.');
-      L.marker(acrePosition, {icon: acreIcon}).addTo(map).bindPopup('My second marker');
+         var jerusalemIcon = L.icon({
+          iconUrl: './img/jerusalem.svg',
+          iconRetinaUrl: './img/jerusalem.svg',
+          iconSize: [200, 305],
+          iconAnchor: [150, 150],
+          popupAnchor: [0, 0],
+          shadowUrl: null,
+          shadowRetinaUrl: null,
+          shadowSize: [0, 0],
+          shadowAnchor: [0, 0]
+      });
+
+          var ormusIcon = L.icon({
+          iconUrl: './img/ormus.svg',
+          iconRetinaUrl: './img/ormus.svg',
+          iconSize: [200, 305],
+          iconAnchor: [150, 100],
+          popupAnchor: [0, 0],
+          shadowUrl: null,
+          shadowRetinaUrl: null,
+          shadowSize: [0, 0],
+          shadowAnchor: [0, 0]
+      });
+          var balkhIcon = L.icon({
+          iconUrl: './img/balkh.svg',
+          iconRetinaUrl: './img/balkh.svg',
+          iconSize: [200, 305],
+          iconAnchor: [150, 150],
+          popupAnchor: [0, 0],
+          shadowUrl: null,
+          shadowRetinaUrl: null,
+          shadowSize: [0, 0],
+          shadowAnchor: [0, 0]
+      });
+
+          var kashgarIcon = L.icon({
+          iconUrl: './img/kashgar.svg',
+          iconRetinaUrl: './img/kashgar.svg',
+          iconSize: [200, 305],
+          iconAnchor: [150, 150],
+          popupAnchor: [0, 0],
+          shadowUrl: null,
+          shadowRetinaUrl: null,
+          shadowSize: [0, 0],
+          shadowAnchor: [0, 0]
+      });
+
+          var shangduIcon = L.icon({
+          iconUrl: './img/shangdu.svg',
+          iconRetinaUrl: './img/shangdu.svg',
+          iconSize: [200, 305],
+          iconAnchor: [150, 150],
+          popupAnchor: [0, 0],
+          shadowUrl: null,
+          shadowRetinaUrl: null,
+          shadowSize: [0, 0],
+          shadowAnchor: [0, 0]
+      });
+      
+      L.marker(venicePosition, {icon: veniceIcon}).addTo(map).bindPopup('Venice');
+      L.marker(acrePosition, {icon: acreIcon}).addTo(map).bindPopup('Arce');
+      L.marker(jerusalemPosition, {icon: jerusalemIcon}).addTo(map).bindPopup('Jerusalem');
+      L.marker(ormusPosition, {icon: ormusIcon}).addTo(map).bindPopup('Ormus');
+      L.marker(balkhPosition, {icon: balkhIcon}).addTo(map).bindPopup('Balkh');
+      L.marker(kashgarPosition, {icon: kashgarIcon}).addTo(map).bindPopup('Kashgar');
+      L.marker(shangduPosition, {icon: shangduIcon}).addTo(map).bindPopup('Shangdu');
+
+
      }
 
     </script>
@@ -81,8 +167,14 @@
   <div class="off-canvas-content" id="js-off-canvas-content">
   	<a href="#" class="off-canvas-close" id="js-off-canvas-close">×</a>
   	<ul>
-  		<li><img src="img/testikuva.svg" id="kashgar-navigation" alt="Kashgar"> <br> <p>City 1</p></li>
-  		<li><img src="img/testikuva2.svg" alt="Kashgar"> <p>City 2</p></li>
+  		<li><img src="img/venice.svg" id="venice-navigation" alt="Venice"> <p>Venice</p></li>
+      <li><img src="img/acre.svg" id="acre-navigation" alt="Acre"> <p>Acre</p></li>
+      <li><img src="img/jerusalem.svg" id="jerusalem-navigation" alt="Jerusalem"> <p>Jerusalem</p></li>
+      <li><img src="img/ormus.svg" id="ormus-navigation" alt="Ormus"> <p>Ormus</p></li>
+      <li><img src="img/balkh.svg" id="balkh-navigation" alt="Balkh"> <p>Balkh</p></li>
+      <li><img src="img/kashgar.svg" id="kashgar-navigation" alt="Kashgar"> <br> <p>Kashgar</p></li>
+      <li><img src="img/shangdu.svg" id="shangdu-navigation" alt="Shangdu"> <p>Shangdu</p></li>
+
   	</ul>
   </div>
 
@@ -98,7 +190,7 @@
 <!-- map -->
  	<div id="map"></div>
 
-<!-- jquery for off-canvas menu-->
+<!-- jquery for off-canvas menu -->
  	<script>
  		// initialize navigation
 	    $(function(){
@@ -109,7 +201,37 @@
 
         $("#kashgar-navigation").click(function() {
           map.panTo(kashgarPosition, {duration: 1});
-          setTimeout("map.zoomIn(10)", 1000);
+          setTimeout("map.zoomIn(10)", 2000);
+        });
+
+        $("#venice-navigation").click(function() {
+          map.panTo(venicePosition, {duration: 1});
+          setTimeout("map.zoomIn(10)", 2000);
+        });
+
+        $("#jerusalem-navigation").click(function() {
+          map.panTo(jerusalemPosition, {duration: 1});
+          setTimeout("map.zoomIn(10)", 2000);
+        });
+
+        $("#acre-navigation").click(function() {
+          map.panTo(acrePosition, {duration: 1});
+          setTimeout("map.zoomIn(10)", 2000);
+        });
+
+        $("#ormus-navigation").click(function() {
+          map.panTo(ormusPosition, {duration: 1});
+          setTimeout("map.zoomIn(10)", 2000);
+        });
+
+        $("#balkh-navigation").click(function() {
+          map.panTo(balkhPosition, {duration: 1});
+          setTimeout("map.zoomIn(10)", 2000);
+        });
+
+        $("#shangdu-navigation").click(function() {
+          map.panTo(shangduPosition, {duration: 1});
+          setTimeout("map.zoomIn(10)", 2000);
         });
 		  });
  	</script>
