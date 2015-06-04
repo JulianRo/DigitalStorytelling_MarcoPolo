@@ -24,6 +24,7 @@
       var ormusPosition = [-65, 115];
       var balkhPosition = [-50, 120];
       var kashgarPosition = [-50, 150];
+	   var mogaoPosition = [-40, 170];
       var shangduPosition = [-40, 195];
 
       function init() {
@@ -113,6 +114,18 @@
           shadowSize: [0, 0],
           shadowAnchor: [0, 0]
       });
+	  
+	      var mogaoIcon = L.icon({
+          iconUrl: './img/mogao.svg',
+          iconRetinaUrl: './img/mogao.svg',
+          iconSize: [200, 305],
+          popupAnchor: [0, 0],
+          shadowUrl: null,
+          shadowRetinaUrl: null,
+          shadowSize: [0, 0],
+          shadowAnchor: [0, 0]
+      });
+
 
           var shangduIcon = L.icon({
           iconUrl: './img/shangdu.svg',
@@ -131,6 +144,7 @@
       L.marker(ormusPosition, {icon: ormusIcon}).addTo(map).bindPopup('Ormus');
       L.marker(balkhPosition, {icon: balkhIcon}).addTo(map).bindPopup('Balkh');
       L.marker(kashgarPosition, {icon: kashgarIcon}).addTo(map).bindPopup('Kashgar');
+	  L.marker(mogaoPosition, {icon: mogaoIcon}).addTo(map).bindPopup('Mogao');
       L.marker(shangduPosition, {icon: shangduIcon}).addTo(map).bindPopup('Shangdu');
 
     //set the zoom control to top right corner:
@@ -155,33 +169,43 @@
   <body onload="init()">
   
   <!-- Off-canvas menu -->
-  <a href="#" class="off-canvas-trigger" id="js-off-canvas-trigger">Info</a>
+  <a href="#welcome" class="smoothScroll" id="home"><p>HOME</p></a>
+  
+  <a href="#" class="off-canvas-trigger" id="js-off-canvas-trigger">INFO</a>
+  
   <div class="off-canvas-content" id="js-off-canvas-content">
   	<a href="#" class="off-canvas-close" id="js-off-canvas-close">×</a>
-  	<ul>
-  		<li><img src="img/venice.svg" id="venice-navigation" alt="Venice"> <p>Venice</p></li>
-      <li><img src="img/acre.svg" id="acre-navigation" alt="Acre"> <p>Acre</p></li>
-      <li><img src="img/jerusalem.svg" id="jerusalem-navigation" alt="Jerusalem"> <p>Jerusalem</p></li>
-      <li><img src="img/ormus.svg" id="ormus-navigation" alt="Ormus"> <p>Ormus</p></li>
-      <li><img src="img/balkh.svg" id="balkh-navigation" alt="Balkh"> <p>Balkh</p></li>
-      <li><img src="img/kashgar.svg" id="kashgar-navigation" alt="Kashgar"> <br> <p>Kashgar</p></li>
-      <li><img src="img/shangdu.svg" id="shangdu-navigation" alt="Shangdu"> <p>Shangdu</p></li>
+    
+  
+  	<ul class="dropdown-menu scrollable-menu" role="menu">
+  		<li><img src="img/venice.svg" id="venice-navigation" alt="Venice"> <p>VENICE</p></li>
+      <li><img src="img/acre.svg" id="acre-navigation" alt="Acre"> <p>ACRE</p></li>
+      <li><img src="img/jerusalem.svg" id="jerusalem-navigation" alt="Jerusalem"> <p>JERUSALEM</p></li>
+      <li><img src="img/ormus.svg" id="ormus-navigation" alt="Ormus"> <p>ORMUS</p></li>
+      <li><img src="img/balkh.svg" id="balkh-navigation" alt="Balkh"> <p>BALKH</p></li>
+      <li><img src="img/kashgar.svg" id="kashgar-navigation" alt="Kashgar"> <br> <p>KASHGAR</p></li>
+       <li><img src="img/mogao.svg" id="mogao-navigation" alt="Mogao"> <br> <p>MOGAO CAVES</p></li>
+      <li><img src="img/shangdu.svg" id="shangdu-navigation" alt="Shangdu"> <p>SHANGDU</p></li>
 
   	</ul>
   </div>
-
+ 
  <!-- first page -->
     <div class="on-top-of-menu">
       <div id="welcome">
         <h2>The adventures of Marco Polo</h2>
         <p>Animation comes here</p>
-        <a href="#map" class="smoothScroll" id="explore">Explore</a>
+        <a href="#map" class="smoothScroll" id="explore">EXPLORE</a>
       </div>
     </div>
 
 <!-- map -->
- 	<div id="map"></div>
-
+ 
+ 	<div id="map"> 
+    
+    
+    </div>
+  
 <!-- jquery for off-canvas menu -->
  	<script>
  		// initialize navigation
@@ -221,6 +245,13 @@
           setTimeout("map.zoomIn(10)", 1000);
         });
 
+
+        $("#mogao-navigation").click(function() {
+          map.panTo(mogaoPosition, {duration: 1});
+          setTimeout("map.zoomIn(10)", 1000);
+        });
+		
+		
         $("#shangdu-navigation").click(function() {
           map.panTo(shangduPosition, {duration: 1});
           setTimeout("map.zoomIn(10)", 1000);
