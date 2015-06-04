@@ -48,24 +48,11 @@
           noWrap: true          
         }).addTo(map);
 
-      //set the zoom control to top right corner:
-        var zoomControl = L.control.zoom({
-            position: 'topright',
-        });
-          map.addControl(zoomControl);
-
-        var loadingControl = L.Control.loading({
-            position: 'topright',
-            zoomControl: zoomControl,
-        });
-          map.addControl(loadingControl);
-
       //add the city icons:
          var veniceIcon = L.icon({
           iconUrl: './img/venice.svg',
           iconRetinaUrl: './img/venice.svg',
           iconSize: [200, 305],
-          iconAnchor: [150, 150],
           popupAnchor: [0, 0],
           shadowUrl: null,
           shadowRetinaUrl: null,
@@ -77,7 +64,6 @@
           iconUrl: './img/acre.svg',
           iconRetinaUrl: './img/acre.svg',
           iconSize: [200, 305],
-          iconAnchor: [150, 150],
           popupAnchor: [0, 0],
           shadowUrl: null,
           shadowRetinaUrl: null,
@@ -89,7 +75,6 @@
           iconUrl: './img/jerusalem.svg',
           iconRetinaUrl: './img/jerusalem.svg',
           iconSize: [200, 305],
-          iconAnchor: [150, 150],
           popupAnchor: [0, 0],
           shadowUrl: null,
           shadowRetinaUrl: null,
@@ -101,7 +86,6 @@
           iconUrl: './img/ormus.svg',
           iconRetinaUrl: './img/ormus.svg',
           iconSize: [200, 305],
-          iconAnchor: [150, 100],
           popupAnchor: [0, 0],
           shadowUrl: null,
           shadowRetinaUrl: null,
@@ -112,7 +96,6 @@
           iconUrl: './img/balkh.svg',
           iconRetinaUrl: './img/balkh.svg',
           iconSize: [200, 305],
-          iconAnchor: [150, 150],
           popupAnchor: [0, 0],
           shadowUrl: null,
           shadowRetinaUrl: null,
@@ -124,7 +107,6 @@
           iconUrl: './img/kashgar.svg',
           iconRetinaUrl: './img/kashgar.svg',
           iconSize: [200, 305],
-          iconAnchor: [150, 150],
           popupAnchor: [0, 0],
           shadowUrl: null,
           shadowRetinaUrl: null,
@@ -136,7 +118,6 @@
           iconUrl: './img/shangdu.svg',
           iconRetinaUrl: './img/shangdu.svg',
           iconSize: [200, 305],
-          iconAnchor: [150, 150],
           popupAnchor: [0, 0],
           shadowUrl: null,
           shadowRetinaUrl: null,
@@ -152,6 +133,17 @@
       L.marker(kashgarPosition, {icon: kashgarIcon}).addTo(map).bindPopup('Kashgar');
       L.marker(shangduPosition, {icon: shangduIcon}).addTo(map).bindPopup('Shangdu');
 
+    //set the zoom control to top right corner:
+        var zoomControl = L.control.zoom({
+            position: 'topright',
+        });
+          map.addControl(zoomControl);
+
+        var loadingControl = L.Control.loading({
+            position: 'topright',
+            zoomControl: zoomControl,
+        });
+          map.addControl(loadingControl);
 
      }
 
@@ -201,37 +193,37 @@
 
         $("#kashgar-navigation").click(function() {
           map.panTo(kashgarPosition, {duration: 1});
-          setTimeout("map.zoomIn(10)", 2000);
+          setTimeout("map.zoomIn(10)", 1000);
         });
 
         $("#venice-navigation").click(function() {
           map.panTo(venicePosition, {duration: 1});
-          setTimeout("map.zoomIn(10)", 2000);
+          setTimeout("map.zoomIn(10)", 1000);
         });
 
         $("#jerusalem-navigation").click(function() {
           map.panTo(jerusalemPosition, {duration: 1});
-          setTimeout("map.zoomIn(10)", 2000);
+          setTimeout("map.zoomIn(10)", 1000);
         });
 
         $("#acre-navigation").click(function() {
           map.panTo(acrePosition, {duration: 1});
-          setTimeout("map.zoomIn(10)", 2000);
+          setTimeout("map.zoomIn(10)", 1000);
         });
 
         $("#ormus-navigation").click(function() {
           map.panTo(ormusPosition, {duration: 1});
-          setTimeout("map.zoomIn(10)", 2000);
+          setTimeout("map.zoomIn(10)", 1000);
         });
 
         $("#balkh-navigation").click(function() {
           map.panTo(balkhPosition, {duration: 1});
-          setTimeout("map.zoomIn(10)", 2000);
+          setTimeout("map.zoomIn(10)", 1000);
         });
 
         $("#shangdu-navigation").click(function() {
           map.panTo(shangduPosition, {duration: 1});
-          setTimeout("map.zoomIn(10)", 2000);
+          setTimeout("map.zoomIn(10)", 1000);
         });
 		  });
  	</script>
