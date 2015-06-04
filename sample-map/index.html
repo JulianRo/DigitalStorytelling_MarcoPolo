@@ -16,10 +16,13 @@
 	<script type="text/javascript" src="js/smoothscroll.js"></script>
    	    <script>
     // script for Leaflet map
+      var map;
+      var kashgarPosition = [-100, 120];
+      
       function init() {
         var mapMinZoom = 3;
         var mapMaxZoom = 5;
-        var map = L.map('map', {
+        map = L.map('map', {
           maxZoom: mapMaxZoom,
           minZoom: mapMinZoom,
           crs: L.CRS.Simple
@@ -49,8 +52,8 @@
           shadowAnchor: [0, 0]
       });
 
-      L.marker([-100, 120], {icon: kashgarIcon}).addTo(map).bindPopup('A pretty CSS3 <b>popup</b>. <br> Easily customizable.');
-      L.marker([-80, 20], {icon: kashgarIcon}).addTo(map).bindPopup('My second marker');
+      L.marker(kashgarPosition, {icon: kashgarIcon}).addTo(map).bindPopup('A pretty CSS3 <b>popup</b>. <br> Easily customizable.');
+      // L.marker([-80, 20], {icon: kashgarIcon}).addTo(map).bindPopup('My second marker');
      }
 
     </script>
@@ -65,7 +68,7 @@
   <div class="off-canvas-content" id="js-off-canvas-content">
   	<a href="#" class="off-canvas-close" id="js-off-canvas-close">×</a>
   	<ul>
-  		<li><img src="img/testikuva.svg" alt="Kashgar"> <br> <p>City 1</p></li>
+  		<li><img src="img/testikuva.svg" id="kashgar-navigation" alt="Kashgar"> <br> <p>City 1</p></li>
   		<li><img src="img/testikuva2.svg" alt="Kashgar"> <p>City 2</p></li>
   	</ul>
   </div>
@@ -85,10 +88,17 @@
 <!-- jquery for off-canvas menu-->
  	<script>
  		// initialize navigation
-	    $("#js-off-canvas-trigger, #js-off-canvas-close").on("click", function(event) {
-			event.preventDefault();
-			$("#js-off-canvas-content").toggleClass("is-open");
-		});
+	    $(function(){
+        $("#js-off-canvas-trigger, #js-off-canvas-close").on("click", function(event) {
+  			 event.preventDefault();
+  			 $("#js-off-canvas-content").toggleClass("is-open");
+        });
+
+        $("#kashgar-navigation").click(function() {
+          map.panTo(kashgarPosition, {duration: 1});
+          setTimeout("map.zoomIn(10)", 1000);
+        });
+		  });
  	</script>
 
   </body>
