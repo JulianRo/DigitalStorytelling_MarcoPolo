@@ -15,10 +15,9 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
     </script>
     <script type="text/javascript" src="js/smoothscroll.js"></script>
-   	    <script>
+        <script>
     // script for Leaflet map
       var map;
-<<<<<<< Updated upstream
       var venicePosition = [-42, 50];
       var acrePosition = [-55, 82];
       var jerusalemPosition = [-60, 85];
@@ -27,16 +26,6 @@
       var kashgarPosition = [-50, 150];
       var mogaoPosition = [-40, 170];
       var shangduPosition = [-40, 195];
-=======
-      var kashgarPosition = [-100, 120];
-<<<<<<< Updated upstream
-      var arcePosition = [-10, 90];
->>>>>>> Stashed changes
-
-=======
-      var VenicePosition = [-50, 100];
-      
->>>>>>> Stashed changes
       function init() {
         var mapMinZoom = 3;
         var mapMaxZoom = 5;
@@ -46,7 +35,6 @@
           // zoomControl: false,
           crs: L.CRS.Simple
         }).setView([0, 0], mapMaxZoom);
-
         var mapBounds = new L.LatLngBounds(
             map.unproject([0, 5792], mapMaxZoom),
             map.unproject([8192, 0], mapMaxZoom));
@@ -58,7 +46,6 @@
           // attribution: 'Rendered with <a href="http://www.maptiler.com/">MapTiler</a>',//
           noWrap: true          
         }).addTo(map);
-
       //add the city icons:
          var veniceIcon = L.icon({
           iconUrl: './img/venice.svg',
@@ -70,8 +57,6 @@
           shadowSize: [0, 0],
           shadowAnchor: [0, 0]
       });
-
-<<<<<<< Updated upstream
          var acreIcon = L.icon({
           iconUrl: './img/acre.svg',
           iconRetinaUrl: './img/acre.svg',
@@ -82,7 +67,6 @@
           shadowSize: [0, 0],
           shadowAnchor: [0, 0]
       });
-
          var jerusalemIcon = L.icon({
           iconUrl: './img/jerusalem.svg',
           iconRetinaUrl: './img/jerusalem.svg',
@@ -93,7 +77,6 @@
           shadowSize: [0, 0],
           shadowAnchor: [0, 0]
       });
-
           var ormusIcon = L.icon({
           iconUrl: './img/ormus.svg',
           iconRetinaUrl: './img/ormus.svg',
@@ -104,7 +87,6 @@
           shadowSize: [0, 0],
           shadowAnchor: [0, 0]
       });
-
           var balkhIcon = L.icon({
           iconUrl: './img/balkh.svg',
           iconRetinaUrl: './img/balkh.svg',
@@ -115,7 +97,6 @@
           shadowSize: [0, 0],
           shadowAnchor: [0, 0]
       });
-
           var kashgarIcon = L.icon({
           iconUrl: './img/kashgar.svg',
           iconRetinaUrl: './img/kashgar.svg',
@@ -126,8 +107,8 @@
           shadowSize: [0, 0],
           shadowAnchor: [0, 0]
       });
-	  
-	      var mogaoIcon = L.icon({
+    
+        var mogaoIcon = L.icon({
           iconUrl: './img/mogao.svg',
           iconRetinaUrl: './img/mogao.svg',
           iconSize: [200, 305],
@@ -137,30 +118,10 @@
           shadowSize: [0, 0],
           shadowAnchor: [0, 0]
       });
-
           var shangduIcon = L.icon({
           iconUrl: './img/shangdu.svg',
           iconRetinaUrl: './img/shangdu.svg',
           iconSize: [200, 305],
-<<<<<<< Updated upstream
-=======
-          iconAnchor: [150, 150],
-=======
-<<<<<<< Updated upstream
-         var arceIcon = L.icon({
-          iconUrl: './img/acre.svg',
-          iconRetinaUrl: './img/acre.svg',
-          iconSize: [370, 305],
-          iconAnchor: [180, 150],
-=======
-         var VeniceIcon = L.icon({
-          iconUrl: './img/City_Icons-01.png',
-          iconRetinaUrl: './img/City_Icons-01.png',
-          iconSize: [125, 100],
-          iconAnchor: [80, 500],
->>>>>>> Stashed changes
->>>>>>> Stashed changes
->>>>>>> Stashed changes
           popupAnchor: [0, 0],
           shadowUrl: null,
           shadowRetinaUrl: null,
@@ -176,31 +137,7 @@
       L.marker(kashgarPosition, {icon: kashgarIcon}).addTo(map).bindPopup('Kashgar');
       L.marker(mogaoPosition, {icon: mogaoIcon}).addTo(map).bindPopup('Mogao');
       L.marker(shangduPosition, {icon: shangduIcon}).addTo(map).bindPopup('Shangdu');
-
-<<<<<<< HEAD
-=======
-    //set the zoom control to top right corner:
-<<<<<<< Updated upstream
-        var zoomControl = L.control.zoom({
-            position: 'topright',
-        });
-          map.addControl(zoomControl);
-=======
-
-
-<<<<<<< Updated upstream
-=======
-      L.marker(kashgarPosition, {icon: kashgarIcon}).addTo(map).bindPopup('A pretty CSS3 <b>popup</b>. <br> Easily customizable.');
-<<<<<<< Updated upstream
-      L.marker(acrePosition, {icon: acreIcon}).addTo(map).bindPopup('My second marker');
-=======
-      L.marker([-80, 20], {icon: VeniceIcon}).addTo(map).bindPopup('My second marker');
->>>>>>> Stashed changes
->>>>>>> Stashed changes
->>>>>>> Stashed changes
->>>>>>> origin/master
      }
-
     </script>
     <style>
       html, body, #map { width: calc(100%); height:100%; margin:0; padding:0; }
@@ -214,11 +151,11 @@
   <a href="#" class="off-canvas-trigger" id="js-off-canvas-trigger">INFO</a>
   
   <div class="off-canvas-content" id="js-off-canvas-content">
-  	<a href="#" class="off-canvas-close" id="js-off-canvas-close">×</a>
+    <a href="#" class="off-canvas-close" id="js-off-canvas-close">×</a>
     
   
-  	<ul class="dropdown-menu scrollable-menu" role="menu">
-  		<li><img src="img/venice.svg" id="venice-navigation" alt="Venice"> <p>VENICE</p></li>
+    <ul class="dropdown-menu scrollable-menu" role="menu">
+      <li><img src="img/venice.svg" id="venice-navigation" alt="Venice"> <p>VENICE</p></li>
       <li><img src="img/acre.svg" id="acre-navigation" alt="Acre"> <p>ACRE</p></li>
       <li><img src="img/jerusalem.svg" id="jerusalem-navigation" alt="Jerusalem"> <p>JERUSALEM</p></li>
       <li><img src="img/ormus.svg" id="ormus-navigation" alt="Ormus"> <p>ORMUS</p></li>
@@ -227,7 +164,7 @@
        <li><img src="img/mogao.svg" id="mogao-navigation" alt="Mogao"> <br> <p>MOGAO CAVES</p></li>
       <li><img src="img/shangdu.svg" id="shangdu-navigation" alt="Shangdu"> <p>SHANGDU</p></li>
 
-  	</ul>
+    </ul>
   </div>
  
  <!-- first page -->
@@ -241,63 +178,55 @@
 
 <!-- map -->
  
- 	<div id="map"> 
+  <div id="map"> 
     
     
     </div>
   
 <!-- jquery for off-canvas menu -->
- 	<script>
- 		// initialize navigation
-	    $(function(){
+  <script>
+    // initialize navigation
+      $(function(){
         $("#js-off-canvas-trigger, #js-off-canvas-close").on("click", function(event) {
-  			 event.preventDefault();
-  			 $("#js-off-canvas-content").toggleClass("is-open");
+         event.preventDefault();
+         $("#js-off-canvas-content").toggleClass("is-open");
         });
-
         $("#kashgar-navigation").click(function() {
           map.panTo(kashgarPosition, {duration: 1});
           setTimeout("map.zoomIn(10)", 1000);
         });
-
         $("#venice-navigation").click(function() {
           map.panTo(venicePosition, {duration: 1});
           setTimeout("map.zoomIn(10)", 1000);
         });
-
         $("#jerusalem-navigation").click(function() {
           map.panTo(jerusalemPosition, {duration: 1});
           setTimeout("map.zoomIn(10)", 1000);
         });
-
         $("#acre-navigation").click(function() {
           map.panTo(acrePosition, {duration: 1});
           setTimeout("map.zoomIn(10)", 1000);
         });
-
         $("#ormus-navigation").click(function() {
           map.panTo(ormusPosition, {duration: 1});
           setTimeout("map.zoomIn(10)", 1000);
         });
-
         $("#balkh-navigation").click(function() {
           map.panTo(balkhPosition, {duration: 1});
           setTimeout("map.zoomIn(10)", 1000);
         });
-
-
         $("#mogao-navigation").click(function() {
           map.panTo(mogaoPosition, {duration: 1});
           setTimeout("map.zoomIn(10)", 1000);
         });
-		
-		
+    
+    
         $("#shangdu-navigation").click(function() {
           map.panTo(shangduPosition, {duration: 1});
           setTimeout("map.zoomIn(10)", 1000);
         });
-		  });
- 	</script>
+      });
+  </script>
 
   </body>
 </html>
