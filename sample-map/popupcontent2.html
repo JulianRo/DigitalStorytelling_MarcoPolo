@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>popup content</title>
+
+
+<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic' rel='stylesheet' type='text/css'>
+
+
+
+<!--jQuery einbinden (für animationen)-->
+
+<script src="http://code.jquery.com/jquery-2.1.4.js"></script>
+
+
+<style>
+*{
+	box-sizing:border-box;
+   -moz-box-sizing:border-box;
+	margin:0;/*kein Abstand zum Browser-Rand*/
+	}
+
+html, body {
+      height: 100%; /*! important for centering pop-up*/
+      width: 100%;
+      background: gray;
+    }
+
+
+    
+.popup-container {
+      display: table;
+      height: 100%;/*! must be 100% to show correctly*/
+      width:40%;/*relative width to screens size*/
+      margin: 0 auto;
+    }
+
+.popup-table-cell {
+      display: table-cell;
+      vertical-align: middle;      
+    }
+
+.popup-content {
+      background-color: white;
+      border-radius: 5px;
+      font-family: 'Libre Baskerville', serif;
+
+
+     height: 550px;
+     /*padding: 10% 0 10% 0;*/
+      width: auto;
+    }
+
+.popup-heading {
+	/*background: yellow;*/
+	float:left;
+	width: 90%;
+	margin: 80px 0 50px 70px;
+	font-weight: 700;
+	font-size: 45px;
+    }
+
+.popup-sub-heading {
+	/*background: tomato;*/
+	float:left;
+	width: 90%;
+	margin: 0 0 20px 70px;
+	font-weight: 600;
+	font-size: 15px;
+	line-height: 1.5;
+
+    }
+
+.wrapper-picture-text{
+	width: 100%;
+	/*background: yellow*/
+   	overflow: hidden; /* will contain if #first is longer than #second */
+
+
+}
+
+.popup-text {
+	/*background: red;*/
+	float:left;
+	width: 80%;
+	margin: 0 0 30px 70px;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 2;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	padding: 0 15px 0 0;
+    }
+
+.popup-text::-webkit-scrollbar {
+	width: 12px;
+}
+
+.popup-text::-webkit-scrollbar-track {
+	border: 1px solid gray;
+}
+
+.popup-text::-webkit-scrollbar-thumb {
+	background: white;
+	/*background: -webkit-linear-gradient(left, #547c90, #002640);
+	border: 1px solid #333;
+	box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.4);*/
+}
+
+ 
+
+
+</style>
+
+</head>
+
+<body>
+<div class="popup-container">
+    <div class="popup-table-cell">
+
+    	<!--content start-->
+    	<div class="popup-content">
+    		
+    		<div class="popup-heading">Pamir Mountains</div>
+    		<div class="popup-sub-heading">
+    			Greetings from Pamir!
+    			<br>Spending the summer of 1278 there was great.
+    			<br>Always worth a visit :) - <I>Marco</I></div>
+
+
+    		<div class="wrapper-picture-text">	
+    		
+	    		<div class="popup-picture-wrapper">
+	    	
+	    		</div>
+
+
+	    		<div class="popup-text">
+					<i>"The Kingdom of Ormus (also known as Ohrmuzd, Hormuz, and Ohrmazd; Portuguese Ormuz) was a 10th to 17th century kingdom located within the Persian Gulf and extending as far as the Strait of Hormuz. The Kingdom was established by Arab princes in the 10th century who in 1262 came under the suzerainty of Persia,[1] before becoming a client state of the Portuguese Empire.
+					The kingdom received its name from the fortified port city which served as its capital. It was one of the most important ports in the Middle East at the time as it controlled seaway trading routes through the Persian Gulf to India and East Africa. This port was probably located on Hormuz Island[citation needed], which is located near the modern city of Bandar-e Abbas."</i>
+	    		</div>
+
+	    	</div>
+
+    		
+
+
+
+
+
+    		</div><!-- content end-->
+
+    </div>
+  </div>
+
+
+
+<script>
+
+</script>
+
+</body>
+
+</html>
