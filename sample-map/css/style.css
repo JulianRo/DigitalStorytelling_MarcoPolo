@@ -295,12 +295,12 @@ margin:0 auto;*/
   	position: absolute;
  }*/
 
- .bio-container{
+ .bio-container{/*display none > js show when video has finished*/
  	z-index: -1;
  	background: #AF9072;/*brown bg*/
  	color: #32200f;/*text brown*/
   	width: 100%;
-  	height: 100%;
+  	/*height: 100%;*/
   	font-family: 'Libre Baskerville', serif;
   	-moz-font-feature-settings: "liga=0";/*ligaturen*/
 
