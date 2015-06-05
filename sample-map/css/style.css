@@ -81,9 +81,9 @@ margin-left:30px;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 	font-family: 'Libre Baskerville', serif;
-	padding: 1em;
+	padding: 0.3em;
 	z-index: 6;
-	background:#eb050e;
+	background:#c5040c;
 	-webkit-border-top-right-radius: 100px;
 	-webkit-border-bottom-right-radius: 100px;
 	-moz-border-radius-topright: 100px;
@@ -92,6 +92,19 @@ margin-left:30px;
 	border-bottom-right-radius: 12px;
 	}
 
+.SidebarHead{
+	font-family: 'libre Baskerville', bold;
+	padding-top: 15px;
+	border-bottom-style: dotted;
+}
+
+#TriggerText{
+	font-family: 'Libre Baskerville', bold;
+	color:#FFFFFF;
+	font-size: 2rem;
+}
+
+
 ul {
 	list-style-type: none;
 	text-align: center;
@@ -99,46 +112,50 @@ ul {
 
 #venice-navigation{
 	padding-top:60px;
-	width: 90%;
-	height: 90%;
+	width: 70%;
+	height: 70%;
 	}
 
 #acre-navigation{
+	width: 60%;
+	height: 60%;
+}
+
+#jerusalem-navigation{
 	width: 70%;
 	height: 70%;
 }
 
-#jerusalem-navigation{
-	width: 90%;
-	height: 90%;
-}
-
 #ormus-navigation{
-	width: 90%;
-	height: 90%;
+	width: 70%;
+	height: 70%;
 }
 
 #balkh-navigation{
-	width: 90%;
-	height: 90%;
+	width: 70%;
+	height: 70%;
 }
 
 #kashgar-navigation{
-	width: 90%;
-	height: 90%;
+	width: 70%;
+	height: 70%;
 }
 
 #mogao-navigation{
-	width: 90%;
-	height: 90%;
+	width: 70%;
+	height: 70%;
 }
 
 #shangdu-navigation{
-	width: 90%;
-	height: 90%;
+	width: 70%;
+	height: 70%;
 }
+<<<<<<< HEAD
 
 /* POP-UPS
+=======
+/* POP-UPS */
+>>>>>>> origin/master
 
 /* *{
 	box-sizing:border-box;
