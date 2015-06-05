@@ -163,7 +163,7 @@ video{
 	/*font-family: 'Hind', sans-serif;*/
 	/*font-family: 'PT Serif', serif;*/
 	font-family: 'Libre Baskerville', serif;
-	color: #32200f;/*brown text*/
+	color: #32200f;/*brown text
 	font-weight: 400;
 	margin-top: 300px;
 	text-align: center;
@@ -181,6 +181,9 @@ video{
 	-webkit-animation-duration:3s;
 	-moz-animation-duration:3s;
 	animation-duration:3s;
+	z-index:2;/*! above video*/
+
+	text-align: center;
 }
 
 .intro-text.one {
@@ -209,64 +212,6 @@ margin:0 auto;*/
  width: 100%;
  top: 50%;
 }
-
-/*.three {
--webkit-animation-delay: 4s;
--moz-animation-delay: 4s;
-animation-delay: 4s;
-position: absolute;
-
- margin-top: -20px;
- width: 100%;
- top: 50%;
-
-  /*-webkit-transform:translateY(-65px);
-    -webkit-transition: -webkit-transform  1500ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1500ms cubic-bezier(0.165, 0.84, 0.44, 1);
--webkit-transform: translateY(0px) rotateX(0deg);
-  -moz-transform: translateY(0px) rotateX(0deg);
-  -ms-transform: translateY(0px) rotateX(0deg);
-  -o-transform: translateY(0px) rotateX(0deg);
-  transform: translateY(0px) rotateX(0deg);
-
-opacity:0;
-	-webkit-animation:three ease-in 1;  
-	-moz-animation:three ease-in 1;
-	animation:three ease-in 1;
-
-	-webkit-animation-fill-mode:forwards;  
-	-moz-animation-fill-mode:forwards;
-	animation-fill-mode:forwards;
-
-	-webkit-animation-duration:3s;
-	-moz-animation-duration:3s;
-	animation-duration:3s;
-}*/
-
-/*.three {
-	-webkit-transform: translateY(-700px);
-	-moz-transform: translateY(-700px);
-	-ms-transform: translateY(-700px);
-	-o-transform: translateY(-700px);
-	transform: translateY(-700px);
-
-	-webkit-transition: all 3s cubic-bezier(.98,0,1,.28);
-	-moz-transition: all 3s cubic-bezier(.98,0,1,.28);
-	-o-transition: all 3s cubic-bezier(.98,0,1,.28);
-	transition: all 3s cubic-bezier(.98,0,1,.28);
-}
-
-/*.intro-text.three {
-font-size: 2em;
--webkit-animation-delay: 5s;
--moz-animation-delay: 5s;
-animation-delay: 5s;
-position: absolute;
- margin-top: -20px;
- width: 100%;
- top: 50%;
-}*/
-
-
 
 .intro-text.three {/*desert*/
 	font-size: 3.5em;
@@ -367,21 +312,98 @@ position: absolute;
  * MARCO POLO BIO
  *********************************************/
 
- .container_mc_bio{
+ /*.container_mc_bio{
  	z-index: 1;
  	background-color: #AF9072;
 	/*min-width: 100%;
   	min-height: 100%;*/
 
-  	color: #32200f;/*text brown*/
+  	/*color: #32200f;
   	width: 100%;
   	height: 100%;
   	position: absolute;
+ }*/
 
+ .bio-container{
+ 	z-index: -1;
+ 	background: #AF9072;/*brown*/
+ 	color: #32200f;/*text brown*/
+  	width: 100%;
+  	height: 100%;
+  	font-family: 'Libre Baskerville', serif;
+  	-moz-font-feature-settings: "liga=0";/*ligaturen*/
 
-
+  	margin: 0;
+    height: 100%;
+  	box-sizing:border-box;
+   -moz-box-sizing:border-box;
  }
 
+.bio-wrapper-picture {
+	/*background: blue;*/
+	width:30%;
+	float:left;
+}
+    
+.bio-picture {
+	/*background: purple;*/
+	width: 80%;
+	margin: 0 0 50px 120px;
+	padding-top: 40%;
+	display: inline-block;
+}
+	    
+img.marcopolo {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.bio-wrapper-text{
+	width: 100%;
+	background: yellow;
+   	/*overflow: hidden;  will contain if #first is longer than #second */
+   	/*display:flex;float in row*/
+  	/*flex-direction:row;float in row*/
+}
+
+.bio-heading{
+	/*background: red;*/
+	float:right;
+	width: 62%;
+	margin: 90px 0 30px 0;
+	/*text-align: center;*/
+	font-size: 80px;
+	font-weight: 700;
+}
+
+.bio-sub-heading{
+	/*background: blue;*/
+	float:right;
+	width: 62%;
+	margin: 0 0 60px 0;
+	font-weight: 700;
+	font-size: 28px;
+	/*text-align: center;*/
+}
+
+.bio-text {
+	/*background: red;*/
+	float:right;
+	width: 62%;
+	margin: 0 0px 0px 50px;
+	padding-right: 10%;
+	font-weight: 400;
+	font-size: 17px;
+	line-height: 2;
+
+	/*-webkit-column-count: 2;
+      -moz-column-count: 2;
+           column-count: 2;
+
+   -webkit-column-gap: 10px;
+      -moz-column-gap: 10px;
+           column-gap: 10px;*/
+}
 
 
 
@@ -399,6 +421,7 @@ position: absolute;
 	height: 60px;
 	background: yellow;
 	display: inline-block;
+	z-index:4;
 }
 
  .button-music-mute{
@@ -408,6 +431,7 @@ position: absolute;
 	width: 100px;
 	height: 60px;
 	background: tomato;
+	z-index:4;
 }
 
 
@@ -433,7 +457,7 @@ position: absolute;
 <div class="bgvideo">
 <video preload="auto" autoplay="" id="video_layer">
 
-<source src="animation4.mp4">
+<source src="Animation\animation4.mp4">
 
 </video>
 </div>
@@ -454,9 +478,57 @@ position: absolute;
 
 
 <!--________________MARCO POLO BIOGRAPHY___________________-->
-<div class="container_mc_bio">
-test
+
+
+<div class="bio-container">
+
+
+
+	<div class="bio-wrapper-picture">
+		<div class="bio-picture">
+			<img class="marcopolo" src="C:\Users\Christina\Documents\HTW\4. Semester\Konzeptioneller Entwurf - Marco Polo\Research\marcopolo1.png">
+		</div>
+	</div>
+
+
+
+
+	<div class="bio-wrapper-text">
+
+		<div class="bio-heading">
+			Marco Polo
+		</div>
+
+
+		<div class="bio-sub-heading">
+			<i>The travels 1260 - 1295</i>
+		</div>
+
+
+	
+		<div class="bio-text">
+			Marco Polo (1254-1324) was an Italian voyager and merchant who was one of the first Europeans to travel across Asia through China, visiting the Kublai Khan in Beijing. He left in 1271 (he was a teenager at the time) with his father (Nicolo Polo) and uncle (Maffeo Polo); they spent about 24 years traveling. [Nicolo and Maffeo had previously made a trip to China, from 1260-1269, during which the Kublai Khan (the conqueror of China) requested holy oil blessed by the Pope.]
+			Polo sailed south from Venice, Italy, in the Mediterranean Sea to the Middle East. They then went southeast overland to Persia (now Iran), then through the Pamir Mountains and the Gobi Desert, to Beijing, China. They explored the area south of Beijing, including Yunan and Szechuan. Returning to Beijing, they traveled east to Tankchow (at the mouth of the Yangtse River), then south to Hangchow, China. They then sailed south along the coast of China, to what are now Vietnam and Sumatra. <!--They sailed west to Sri Lanka and India, and then back to Ormuz (on the Persian Gulf). They went northwest overland to the Black Sea, then the Mediterranean Sea, and back to Venice, Italy.
+
+			Marco Polo's written accounts of his travels were the first Western record of porcelain, coal, gunpowder, printing, paper money, and silk; Polo wrote "Book of Ser Marco Polo" around 1298.-->
+		</div>
+
+		
+		</div>
+
+		</div>
+	</div>
+
 </div>
+
+
+
+
+
+
+
+
+
 
 <!--________________SKIP INTRO BUTTON___________________-->
 <div class="button-skip-intro">skip intro</div>
