@@ -395,12 +395,12 @@ img.marcopolo {
 
 
 #home{
-position:fixed;	
-z-index:7;
-margin-left:30px;
- right:50px;
- font-size:1.5em;
- color:white;
+	position:fixed;	
+	z-index:7;
+	margin-left:30px;
+	right:50px;
+	font-size:1.5em;
+	color:white;
 	}
 	
 	.leaflet-popup-content p {
@@ -526,12 +526,10 @@ ul {
 	width: 70%;
 	height: 70%;
 }
-<<<<<<< HEAD
 
 /* POP-UPS
 =======
 /* POP-UPS */
->>>>>>> origin/master
 
 /* *{
 	box-sizing:border-box;
