@@ -294,7 +294,12 @@ margin:0 auto;*/
   	height: 100%;
   	position: absolute;
  }*/
-
+#biography {
+	width:100%;
+	margin:0 0 0 0;
+	padding:5 5 5 5;
+	background-color:#fff;
+}
  .bio-container{/*display none > js show when video has finished*/
  	z-index: -1;
  	background: #FFFFFF;/*white bg*/
@@ -310,17 +315,10 @@ margin:0 auto;*/
    -moz-box-sizing:border-box;
  }
 
-.bio-wrapper-picture {
-	/*background: blue;*/
-	width:30%;
-	float:left;
-}
+
     
 .bio-picture {
 	/*background: purple;*/
-	width: 80%;
-	margin: 0 0 50px 120px;
-	padding-top: 40%;
 	display: inline-block;
 }
 	    
@@ -339,32 +337,24 @@ img.marcopolo {
 
 .bio-heading{
 	/*background: red;*/
-	float:right;
-	width: 62%;
-	margin: 90px 0 30px 0;
 	/*text-align: center;*/
-	font-size: 80px;
+	font-size: 4rem;
 	font-weight: 700;
 }
 
 .bio-sub-heading{
 	/*background: blue;*/
-	float:right;
-	width: 62%;
-	margin: 0 0 60px 0;
+
 	font-weight: 700;
-	font-size: 28px;
+	font-size: 2rem;
 	/*text-align: center;*/
 }
 
 .bio-text {
 	/*background: red;*/
-	float:right;
-	width: 62%;
-	margin: 0 0px 0px 50px;
 	padding-right: 10%;
 	font-weight: 400;
-	font-size: 17px;
+	font-size: 1.2rem;
 	line-height: 2;
 
 	/*-webkit-column-count: 2;

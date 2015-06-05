@@ -16,7 +16,7 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
     </script>
     <script type="text/javascript" src="js/smoothscroll.js"></script>
-        <script>
+    <script>
     // script for Leaflet map
       var map;
       var venicePosition = [-40, 49];
@@ -188,7 +188,7 @@
      }
     </script>
     <style>
-      html, body, #map { width: calc(100%); height:100%; margin:0; padding:0; }
+      /* html, body, #map { width: calc(100%); height:100%; margin:0; padding:0; } */
     </style>
   </head>
   <body onload="init()">
@@ -202,7 +202,7 @@
 <div class="bgvideo">
 <video preload="auto" autoplay="" id="video_layer">
 
-<source src="Animation\animation4.mp4">
+<!-- <source src="Animation\animation4.mp4"> -->
 
 </video>
 </div>
@@ -224,20 +224,20 @@
 
 <!--________________MARCO POLO BIOGRAPHY___________________-->
 
-
+<div class="row" id="biography">
 <div class="bio-container on-top-of-menu">
 
 
-
+<div class="small-3 column"
   <div class="bio-wrapper-picture">
     <div class="bio-picture">
       <img class="marcopolo" src="img\marcopolo1.png">
     </div>
   </div>
+</div>
 
 
-
-
+<div class="small-9 column"
   <div class="bio-wrapper-text">
 
     <div class="bio-heading">
@@ -255,7 +255,7 @@
     <p> Marco Polo (1254-1324) was one of the first and most famous Europeans to travel to Asia during the Middle Ages. He traveled farther than any of his predecessors during his 24-year journey along the Silk Road, reaching China and Mongolia, where he became a confidant of Kublai Khan.<br/> The story of his journey is told in "Il Milione", commonly called "The Travels of Marco Polo." 
 <br/>When Polo returned to Venice, writings about his experiences gave Europeans some of their earliest information about China.</p>
     </div>
-
+</div>
        <a href="#map" class="smoothScroll" id="explore"><img src="img/explore.png" width="150" alt="Explore"></a>
     </div>
 
@@ -263,7 +263,7 @@
 
   </div>
 
-
+</div>
 </div>
 
 
