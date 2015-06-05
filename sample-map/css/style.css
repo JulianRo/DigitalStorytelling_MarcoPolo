@@ -137,3 +137,104 @@ ul {
 	width: 90%;
 	height: 90%;
 }
+
+/* POP-UPS */
+
+*{
+	box-sizing:border-box;
+   -moz-box-sizing:border-box;
+	margin:0;/*kein Abstand zum Browser-Rand*/
+	}
+
+html, body {
+      height: 100%; /*! important for centering pop-up*/
+      width: 100%;
+      background: gray;
+    }
+
+
+    
+.leaflet.popup-container {
+      display: table;
+      height: 100%;/*! must be 100% to show correctly*/
+      width:40%;/*relative width to screens size*/
+      margin: 0 auto;
+    }
+
+.leaflet.popup-table-cell {
+      display: table-cell;
+      vertical-align: middle;      
+    }
+
+.leaflet.popup-content {
+      background-color: white;
+      border-radius: 5px;
+      font-family: 'Libre Baskerville', serif;
+
+
+     height: 550px;
+     /*padding: 10% 0 10% 0;*/
+      width: auto;
+    }
+
+.leaflet.popup-heading {
+	background: yellow;
+	float:left;
+	width: 90%;
+	margin: 80px 0 50px 70px;
+	font-weight: 700;
+	font-size: 45px;
+    }
+
+.leaflet.popup-sub-heading {
+	/*background: tomato;*/
+	float:left;
+	width: 90%;
+	margin: 0 0 20px 70px;
+	font-weight: 600;
+	font-size: 15px;
+	line-height: 1.5;
+
+    }
+
+.leaflet.wrapper-picture-text{
+	width: 100%;
+	/*background: yellow*/
+   	overflow: hidden; /* will contain if #first is longer than #second */
+
+
+}
+
+.leaflet.popup-text {
+	/*background: red;*/
+	float:left;
+	width: 80%;
+	margin: 0 0 30px 70px;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 2;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	padding: 0 15px 0 0;
+    }
+
+.leaflet.popup-text: {
+	width: 12px;
+}
+
+.leaflet.popup-text: {
+	border: 1px solid gray;
+}
+
+.leaflet.popup-text: {
+	background: white;
+	/*background: -webkit-linear-gradient(left, #547c90, #002640);
+	border: 1px solid #333;
+	box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.4);*/
+}
+
+.leaflet-popup-content {
+	max-height:300px;
+	overflow-y:scroll;
+	overflow-x:hidden;
+}
