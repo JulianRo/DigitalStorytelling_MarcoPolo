@@ -138,21 +138,23 @@ ul {
 	height: 90%;
 }
 
-/* POP-UPS */
+/* POP-UPS
 
-*{
+/* *{
 	box-sizing:border-box;
    -moz-box-sizing:border-box;
 	margin:0;/*kein Abstand zum Browser-Rand*/
-	}
+	} 
 
 html, body {
       height: 100%; /*! important for centering pop-up*/
       width: 100%;
       background: gray;
-    }
+    } 
 
-
+p {
+	font-family: 'Libre Baskerville', serif;
+}
     
 .leaflet.popup-container {
       display: table;
@@ -169,7 +171,6 @@ html, body {
 .leaflet.popup-content {
       background-color: white;
       border-radius: 5px;
-      font-family: 'Libre Baskerville', serif;
 
 
      height: 550px;
@@ -178,7 +179,7 @@ html, body {
     }
 
 .leaflet.popup-heading {
-	background: yellow;
+	background: white;
 	float:left;
 	width: 90%;
 	margin: 80px 0 50px 70px;
@@ -205,9 +206,10 @@ html, body {
 
 }
 
-.leaflet.popup-text {
+.leaflet.popup-text>p {
 	/*background: red;*/
 	float:left;
+	font-family: 'Libre Baskerville', serif;
 	width: 80%;
 	margin: 0 0 30px 70px;
 	font-weight: 400;
