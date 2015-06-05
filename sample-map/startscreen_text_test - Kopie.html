@@ -1,0 +1,565 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>startscreen text animation</title>
+
+<!--Schriften einbinden-->
+<!--<link href='http://fonts.googleapis.com/css?family=Hind:400,700' rel='stylesheet' type='text/css'>-->
+<!--<link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>-->
+<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic' rel='stylesheet' type='text/css'>
+
+
+<!--jQuery einbinden (für animationen)-->
+<script src="http://code.jquery.com/jquery-2.1.4.js"></script>
+
+
+
+<style type="text/css">
+
+/*********************************************
+ * RESET
+ *********************************************/
+
+*{
+	box-sizing:border-box;
+   -moz-box-sizing:border-box;
+	margin:0;/*kein Abstand zum Browser-Rand*/
+	}
+
+/*********************************************
+ * BG VIDEO
+ *********************************************/
+
+video{
+	width:100%;
+	margin-top:0;
+	z-index: 2;
+	position: absolute;
+}
+
+/*********************************************
+ * ANIMATIONS
+ *********************************************/
+
+@-webkit-keyframes intro-text{/* Chrome, Opera */
+    0% {
+    	opacity:0;
+    	letter-spacing: 1px;
+    }
+    50% {
+    	opacity:1;
+    	letter-spacing: 3px;
+    }
+    100% {
+    	opacity:0;
+    	letter-spacing: 3px;
+    }
+}
+
+@-moz-keyframes intro-text{/* Safari */
+    0% {
+    	opacity:0;
+    	letter-spacing: 1px;
+    }
+    50% {
+    	opacity:1;
+    	letter-spacing: 3px;
+    }
+    100% {
+    	opacity:0;
+    	letter-spacing: 3px;
+    }
+}
+
+@keyframes intro-text{/* Standard syntax */
+    0% {
+    	opacity:0;
+    	letter-spacing: 1px;
+    }
+    50% {
+    	opacity:1;
+    	letter-spacing: 3px;
+    }
+    100% {
+    	opacity:0;
+    	letter-spacing: 3px;
+    }
+}
+
+@-webkit-keyframes marco{/* Chrome, Opera */
+   0% {
+    	opacity:0;
+    	/*top:200px;*/
+    }
+    100% {
+    	opacity:1;
+    	/*top:100px;*/
+    }
+}
+
+@-moz-keyframes marco{/* Safari */
+     0% {
+    	opacity:0;
+    	/*top:200px;*/
+    }
+    100% {
+    	opacity:1;
+    	/*top:100px;*/
+    }
+}
+
+@keyframes marco{/* Standard syntax */
+     0% {
+    	opacity:0;
+    	/*top:200px;*/
+    }
+    100% {
+    	opacity:1;
+    	/*top:100px;*/
+    }
+}
+
+@-webkit-keyframes bgvideo{/* Chrome, Opera */
+    0% {
+    	opacity:100;
+    }
+    100% {
+    	opacity:0;
+    }
+}
+
+
+/*********************************************
+ * INTRO ANIMATION
+ *********************************************/
+
+/*.bgvideo{
+	-webkit-animation:bgvideo ease-in 1;  
+	-moz-animation:bgvideo ease-in 1;
+	animation:bgvideo ease-in 1;
+
+	-webkit-animation-fill-mode:forwards;  
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration:2s;
+	-moz-animation-duration:2s;
+	animation-duration:2s;
+
+	-webkit-animation-delay: 20s;
+	-moz-animation-delay: 20s;
+	animation-delay: 20s;
+
+
+}*/
+
+
+/*********************************************
+ * INTRO TEXT: embark on a journey...
+ *********************************************/
+
+.intro-text{
+	/*font-family: 'Hind', sans-serif;*/
+	/*font-family: 'PT Serif', serif;*/
+	font-family: 'Libre Baskerville', serif;
+	color: #32200f;/*brown text*/
+	font-weight: 400;
+	margin-top: 300px;
+	text-align: center;
+
+
+	opacity:0;  /* make things invisible upon start */
+	-webkit-animation:intro-text ease-in 1;  /* use animattion ease-in and repeat it only 1 time */
+	-moz-animation:intro-text ease-in 1;
+	animation:intro-text ease-in 1;
+
+	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration:3s;
+	-moz-animation-duration:3s;
+	animation-duration:3s;
+	z-index:2;/*! above video*/
+
+	text-align: center;
+}
+
+.intro-text.one {
+	font-size: 3.5em;
+-webkit-animation-delay: 0.3s;
+-moz-animation-delay: 0.3s;
+animation-delay: 0.3s;
+position: absolute;
+/*z-index: 0;
+margin:0 auto;*/
+ margin-top: -20px;
+ /*height: 50px;*/
+ width: 100%;
+ top: 50%;
+}
+
+.intro-text.two {
+	font-size: 3.5em;
+-webkit-animation-delay: 3.3s;
+-moz-animation-delay: 3.3s;
+animation-delay: 3.3s;
+position: absolute;
+/*z-index: -1;
+margin:0 auto;*/
+ margin-top: -20px;
+ width: 100%;
+ top: 50%;
+}
+
+.intro-text.three {/*desert*/
+	font-size: 3.5em;
+	/*-webkit-animation: three 2s infinite  normal ease-out;
+ 	animation: three 2s infinite  normal ease-out;*/
+	-webkit-animation-delay: 6s;
+	-moz-animation-delay: 6s;
+	animation-delay: 6s;
+	position: absolute;
+ 	margin-top: -20px;
+	width: 100%;
+ 	top: 50%;
+}
+
+.intro-text.four {/*mountain*/
+	font-size: 3em;
+	/*-webkit-animation: three 2s infinite  normal ease-out;
+ 	animation: three 2s infinite  normal ease-out;*/
+	-webkit-animation-delay: 9.5s;
+	-moz-animation-delay: 9.5s;
+	animation-delay: 9.5s;
+	position: absolute;
+ 	margin-top: -20px;
+	width: 100%;
+ 	top: 40%;
+}
+
+.intro-text.five {/*cities*/
+	font-size: 3em;
+	/*-webkit-animation: three 2s infinite  normal ease-out;
+ 	animation: three 2s infinite  normal ease-out;*/
+	-webkit-animation-delay: 13s;
+	-moz-animation-delay: 13s;
+	animation-delay: 13s;
+	position: absolute;
+ 	margin-top: -20px;
+	width: 100%;
+ 	top: 40%;
+}
+
+.intro-text.seven {/*the travels of*/
+	font-size: 3.5em;
+	font-weight: 600;
+	/*-webkit-animation: three 2s infinite  normal ease-out;
+ 	animation: three 2s infinite  normal ease-out;*/
+	-webkit-animation-delay: 16.5s;
+	-moz-animation-delay: 16.5s;
+	animation-delay: 16.5s;
+	position: absolute;
+ 	margin-top: -20px;
+	width: 100%;
+ 	top: 40%;
+
+}
+.intro-text.eight {/*Marco Polo*/
+	font-size: 4.5em;
+	font-weight: 600;
+	/*-webkit-animation: three 2s infinite  normal ease-out;
+ 	animation: three 2s infinite  normal ease-out;*/
+	-webkit-animation-delay: 17s;
+	-moz-animation-delay: 17s;
+	animation-delay: 17s;
+	position: absolute;
+ 	margin-top: -20px;
+	width: 100%;
+ 	top: 50%;
+
+ 	/*display: none;hide element for loading-delay*/
+}
+
+
+
+.marco{
+	font-family: 'Hind', sans-serif;
+	font-size: 4.5em;
+	font-weight: 600;
+	margin-top: 150px;
+	text-align: center;
+
+
+	/*opacity:0;  
+	-webkit-animation:marco ease-in 1;  
+	-moz-animation:marco ease-in 1;
+	animation:marco ease-in 1;
+
+	-webkit-animation-fill-mode:forwards;  
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration:3s;
+	-moz-animation-duration:3s;
+	animation-duration:3s;*/
+
+	display: none;
+}
+
+/*********************************************
+ * MARCO POLO BIO
+ *********************************************/
+
+ /*.container_mc_bio{
+ 	z-index: 1;
+ 	background-color: #AF9072;
+	/*min-width: 100%;
+  	min-height: 100%;*/
+
+  	/*color: #32200f;
+  	width: 100%;
+  	height: 100%;
+  	position: absolute;
+ }*/
+
+ .bio-container{
+ 	z-index: -1;
+ 	background: #AF9072;/*brown*/
+ 	color: #32200f;/*text brown*/
+  	width: 100%;
+  	height: 100%;
+  	font-family: 'Libre Baskerville', serif;
+  	-moz-font-feature-settings: "liga=0";/*ligaturen*/
+
+  	margin: 0;
+    height: 100%;
+  	box-sizing:border-box;
+   -moz-box-sizing:border-box;
+ }
+
+.bio-wrapper-picture {
+	/*background: blue;*/
+	width:30%;
+	float:left;
+}
+    
+.bio-picture {
+	/*background: purple;*/
+	width: 80%;
+	margin: 0 0 50px 120px;
+	padding-top: 40%;
+	display: inline-block;
+}
+	    
+img.marcopolo {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.bio-wrapper-text{
+	width: 100%;
+	background: yellow;
+   	/*overflow: hidden;  will contain if #first is longer than #second */
+   	/*display:flex;float in row*/
+  	/*flex-direction:row;float in row*/
+}
+
+.bio-heading{
+	/*background: red;*/
+	float:right;
+	width: 62%;
+	margin: 90px 0 30px 0;
+	/*text-align: center;*/
+	font-size: 80px;
+	font-weight: 700;
+}
+
+.bio-sub-heading{
+	/*background: blue;*/
+	float:right;
+	width: 62%;
+	margin: 0 0 60px 0;
+	font-weight: 700;
+	font-size: 28px;
+	/*text-align: center;*/
+}
+
+.bio-text {
+	/*background: red;*/
+	float:right;
+	width: 62%;
+	margin: 0 0px 0px 50px;
+	padding-right: 10%;
+	font-weight: 400;
+	font-size: 17px;
+	line-height: 2;
+
+	/*-webkit-column-count: 2;
+      -moz-column-count: 2;
+           column-count: 2;
+
+   -webkit-column-gap: 10px;
+      -moz-column-gap: 10px;
+           column-gap: 10px;*/
+}
+
+
+
+
+/*********************************************
+ * BUTTONS (skip, mute)
+ *********************************************/
+ .button-skip-intro{
+	position:absolute;
+	bottom:0;
+	left:0;
+	right:0;
+	margin: auto;
+	width: 100px;
+	height: 60px;
+	background: yellow;
+	display: inline-block;
+	z-index:4;
+}
+
+ .button-music-mute{
+	position:absolute;
+	bottom:0;
+	right:0;
+	width: 100px;
+	height: 60px;
+	background: tomato;
+	z-index:4;
+}
+
+
+
+
+
+
+
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+<!--________________INTRO VIDEO___________________-->
+
+<!--<video preload="auto" autoplay="" loop="" poster="/wp-content/themes/twentyfourteen/images/background-poster.png" style="width: 1484.44444444444px; height: 835px; margin-top: -417.5px; margin-left: -742.222222222222px; opacity: 0.25;">-->
+
+<div class="bgvideo">
+<video preload="auto" autoplay="" id="video_layer">
+
+<source src="Animation\animation4.mp4">
+
+</video>
+</div>
+
+
+
+<!--________________INTRO TEXT___________________-->
+<div class="intro-text one"><p>EMBARK ON A JOURNEY</p></div>
+<div class="intro-text two"><p>WHICH WILL LEAD YOU FAR AWAY</p></div>
+<div class="intro-text three"><p>THROUGH VAST DESERTS</p></div>
+<div class="intro-text four"><p>AND MOUNTAINS WHERE <br>THE SNOW NEVER MELTS</p></div>
+<div class="intro-text five"><p>EXPLORE CITIES YOU HAVE <br>NEVER HEARD OF BEFORE</p></div>
+<!--<div class="intro-text six"><p>FOLLOW</p></div>-->
+<div class="intro-text seven"><p>The Travels of</p></div>
+<div class="intro-text eight"><p>MARCO POLO</p></div>
+
+
+
+
+<!--________________MARCO POLO BIOGRAPHY___________________-->
+
+
+<div class="bio-container">
+
+
+
+	<div class="bio-wrapper-picture">
+		<div class="bio-picture">
+			<img class="marcopolo" src="C:\Users\Christina\Documents\HTW\4. Semester\Konzeptioneller Entwurf - Marco Polo\Research\marcopolo1.png">
+		</div>
+	</div>
+
+
+
+
+	<div class="bio-wrapper-text">
+
+		<div class="bio-heading">
+			Marco Polo
+		</div>
+
+
+		<div class="bio-sub-heading">
+			<i>The travels 1260 - 1295</i>
+		</div>
+
+
+	
+		<div class="bio-text">
+			Marco Polo (1254-1324) was an Italian voyager and merchant who was one of the first Europeans to travel across Asia through China, visiting the Kublai Khan in Beijing. He left in 1271 (he was a teenager at the time) with his father (Nicolo Polo) and uncle (Maffeo Polo); they spent about 24 years traveling. [Nicolo and Maffeo had previously made a trip to China, from 1260-1269, during which the Kublai Khan (the conqueror of China) requested holy oil blessed by the Pope.]
+			Polo sailed south from Venice, Italy, in the Mediterranean Sea to the Middle East. They then went southeast overland to Persia (now Iran), then through the Pamir Mountains and the Gobi Desert, to Beijing, China. They explored the area south of Beijing, including Yunan and Szechuan. Returning to Beijing, they traveled east to Tankchow (at the mouth of the Yangtse River), then south to Hangchow, China. They then sailed south along the coast of China, to what are now Vietnam and Sumatra. <!--They sailed west to Sri Lanka and India, and then back to Ormuz (on the Persian Gulf). They went northwest overland to the Black Sea, then the Mediterranean Sea, and back to Venice, Italy.
+
+			Marco Polo's written accounts of his travels were the first Western record of porcelain, coal, gunpowder, printing, paper money, and silk; Polo wrote "Book of Ser Marco Polo" around 1298.-->
+		</div>
+
+		
+		</div>
+
+		</div>
+	</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!--________________SKIP INTRO BUTTON___________________-->
+<div class="button-skip-intro">skip intro</div>
+<div class="button-music-mute">mute</div>
+
+<script>
+
+
+
+
+$(document).ready(function() {
+
+
+    //$('.marco').delay(2000).fadeIn(1000);//text loading delay
+
+
+
+    var $video = $('#video_layer');
+
+    var video_src = $video.get(0);
+
+    video_src.onended = function(e) {
+      console.log('fertig');
+      $video.fadeOut(1000);
+    };
+
+    console.log(video_src);
+
+});
+
+</script>
+
+</body>
+</html>
