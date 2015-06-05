@@ -33,7 +33,7 @@
         map = L.map('map', {
           maxZoom: mapMaxZoom,
           minZoom: mapMinZoom,
-          zoomControl: false,
+          // zoomControl: false,
           crs: L.CRS.Simple
         }).setView([0, 0], mapMaxZoom);
 
@@ -147,11 +147,6 @@
       L.marker(mogaoPosition, {icon: mogaoIcon}).addTo(map).bindPopup('Mogao');
       L.marker(shangduPosition, {icon: shangduIcon}).addTo(map).bindPopup('Shangdu');
 
-    //set the zoom control to top right corner:
-        var zoomControl = L.control.zoom({
-            position: 'topright',
-        });
-          map.addControl(zoomControl);
      }
 
     </script>
