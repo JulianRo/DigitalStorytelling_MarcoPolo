@@ -295,9 +295,8 @@ margin:0 auto;*/
   	position: absolute;
  }*/
 #biography {
-	width:100%;
+	max-width:100%;
 	margin:0 0 0 0;
-	padding:5 5 5 5;
 	background-color:#fff;
 }
  .bio-container{/*display none > js show when video has finished*/
@@ -400,6 +399,9 @@ img.marcopolo {
 position:fixed;	
 z-index:7;
 margin-left:30px;
+ right:50px;
+ font-size:1.5em;
+ color:white;
 	}
 	
 	.leaflet-popup-content p {
@@ -597,7 +599,7 @@ p {
 
 }
 
-.leaflet.popup-text>p {
+.leaflet.popup-text {
 	/*background: red;*/
 	float:left;
 	font-family: 'Libre Baskerville', serif;
