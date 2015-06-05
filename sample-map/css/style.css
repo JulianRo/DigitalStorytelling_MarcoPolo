@@ -75,21 +75,22 @@ margin-left:30px;
 
 .off-canvas-trigger {
 	position: fixed;
-	top: 50%;
+		top: 50%;
 	left: 0;
 	font-size:1.5rem;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
+	font-family: 'Libre Baskerville', serif;
 	padding: 1em;
 	z-index: 6;
-	background:#fff;
+	background:#eb050e;
 	-webkit-border-top-right-radius: 100px;
 	-webkit-border-bottom-right-radius: 100px;
 	-moz-border-radius-topright: 100px;
 	-moz-border-radius-bottomright: 100px;
-	border-top-right-radius: 100px;
-	border-bottom-right-radius: 100px;
-}
+	border-top-right-radius: 12px;
+	border-bottom-right-radius: 12px;
+	}
 
 ul {
 	list-style-type: none;
