@@ -33,7 +33,7 @@
         map = L.map('map', {
           maxZoom: mapMaxZoom,
           minZoom: mapMinZoom,
-          // zoomControl: false,
+          zoomControl: false,
           crs: L.CRS.Simple
         }).setView([0, 0], mapMaxZoom);
 
@@ -144,11 +144,20 @@
       L.marker(ormusPosition, {icon: ormusIcon}).addTo(map).bindPopup('Ormus');
       L.marker(balkhPosition, {icon: balkhIcon}).addTo(map).bindPopup('Balkh');
       L.marker(kashgarPosition, {icon: kashgarIcon}).addTo(map).bindPopup('Kashgar');
-	  L.marker(mogaoPosition, {icon: mogaoIcon}).addTo(map).bindPopup('Mogao');
+      L.marker(mogaoPosition, {icon: mogaoIcon}).addTo(map).bindPopup('Mogao');
       L.marker(shangduPosition, {icon: shangduIcon}).addTo(map).bindPopup('Shangdu');
 
     //set the zoom control to top right corner:
+        var zoomControl = L.control.zoom({
+            position: 'topright',
+        });
+          map.addControl(zoomControl);
 
+        var loadingControl = L.Control.loading({
+            position: 'topright',
+            zoomControl: zoomControl,
+        });
+          map.addControl(loadingControl);
 
      }
 
