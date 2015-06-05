@@ -297,7 +297,7 @@ margin:0 auto;*/
 
  .bio-container{/*display none > js show when video has finished*/
  	z-index: -1;
- 	background: #AF9072;/*brown bg*/
+ 	background: #FFFFFF;/*white bg*/
  	color: #32200f;/*text brown*/
   	width: 100%;
   	/*height: 100%;*/
