@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Adventures of Marco Polo</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/style2.css" />
+    <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+    <![endif]-->
+    <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="js/smoothscroll.js"></script>
+        <script>
+    // script for Leaflet map
+      var map;
+      var venicePosition = [-40, 49];
+      var acrePosition = [-55, 82];
+      var jerusalemPosition = [-63, 83];
+      var ormusPosition = [-70, 115];
+      var balkhPosition = [-51, 118];
+      var kashgarPosition = [-49, 147];
+      var mogaoPosition = [-41, 162];
+      var shangduPosition = [-38, 194];
+      var markers = [];
+
+
+      function setIcon_size(zoom){
+        var percentage = zoom / 5;
+        
+        for(i=0;i<markers.length;i++){
+  
+          var ico_size = markers[i].options.icon.options.iconSize_original;            
+              markers[i].options.icon.options.iconSize = [ico_size[0]*percentage,ico_size[1]*percentage];
+          markers[i].setIcon(markers[i].options.icon);
+        }
+      }
+      function init() {
+        var mapMinZoom = 3;
+        var mapMaxZoom = 5;
+        map = L.map('map', {
+          maxZoom: mapMaxZoom,
+          minZoom: mapMinZoom,
+          zoomControl: false,
+          markerZoomAnimation: false,
+          crs: L.CRS.Simple
+        }).setView([0, 0], mapMaxZoom);
+
+        
+
+        map.on('zoomend',function(event){
+          var zoomlevel = map.getZoom();
+
+          setIcon_size(zoomlevel);
+          
+        });
+        var mapBounds = new L.LatLngBounds(
+            map.unproject([0, 5792], mapMaxZoom),
+            map.unproject([8192, 0], mapMaxZoom));
+            
+        map.setMaxBounds(mapBounds);
+
+        L.tileLayer('{z}/{x}/{y}.png', {
+          minZoom: mapMinZoom, maxZoom: mapMaxZoom,
+          bounds: mapBounds,
+          // attribution: 'Rendered with <a href="http://www.maptiler.com/">MapTiler</a>',//
+          noWrap: true          
+        }).addTo(map);
+
+
+        
+      //add the city icons:
+         var veniceIcon = L.icon({
+          iconUrl: './img/City_Icons-01.svg',
+          iconRetinaUrl: './img/City_Icons-01.svg',
+          iconSize: [200, 305],
+          iconSize_original : [200, 305],
+          popupAnchor: [0, 0],
+          shadowUrl: null,
+          shadowRetinaUrl: null,
+          shadowSize: [0, 0],
+          shadowAnchor: [0, 0]
+      });
+         var acreIcon = L.icon({
+          iconUrl: './img/City_Icons-02.svg',
+          iconRetinaUrl: './img/City_Icons-02.svg',
+          iconSize: [200, 305],
+          iconSize_original : [200, 305],
+          popupAnchor: [0, 0],
+          shadowUrl: null,
+          shadowRetinaUrl: null,
+          shadowSize: [0, 0],
+          shadowAnchor: [0, 0]
+      });
+         var jerusalemIcon = L.icon({
+          iconUrl: './img/City_Icons-03.svg',
+          iconRetinaUrl: './img/City_Icons-03.svg',
+          iconSize: [200, 305],
+          iconSize_original : [200, 305],
+          popupAnchor: [0, 0],
+          shadowUrl: null,
+          shadowRetinaUrl: null,
+          shadowSize: [0, 0],
+          shadowAnchor: [0, 0]
+      });
+          var ormusIcon = L.icon({
+          iconUrl: './img/City_Icons-04.svg',
+          iconRetinaUrl: './img/City_Icons-04.svg',
+          iconSize: [200, 305],
+          iconSize_original : [200, 305],
+          popupAnchor: [0, 0],
+          shadowUrl: null,
+          shadowRetinaUrl: null,
+          shadowSize: [0, 0],
+          shadowAnchor: [0, 0]
+      });
+          var balkhIcon = L.icon({
+          iconUrl: './img/City_Icons-05.svg',
+          iconRetinaUrl: './img/City_Icons-05.svg',
+          iconSize: [200, 305],
+          iconSize_original : [200, 305],
+          popupAnchor: [0, 0],
+          shadowUrl: null,
+          shadowRetinaUrl: null,
+          shadowSize: [0, 0],
+          shadowAnchor: [0, 0]
+      });
+          var kashgarIcon = L.icon({
+          iconUrl: './img/City_Icons-06.svg',
+          iconRetinaUrl: './img/City_Icons-06.svg',
+          iconSize: [200, 305],
+          iconSize_original : [200, 305],
+          popupAnchor: [0, 0],
+          shadowUrl: null,
+          shadowRetinaUrl: null,
+          shadowSize: [0, 0],
+          shadowAnchor: [0, 0]
+      });
+    
+        var mogaoIcon = L.icon({
+          iconUrl: './img/City_Icons-08.svg',
+          iconRetinaUrl: './img/City_Icons-08.svg',
+          iconSize: [200, 305],
+          iconSize_original : [200, 305],
+          popupAnchor: [0, 0],
+          shadowUrl: null,
+          shadowRetinaUrl: null,
+          shadowSize: [0, 0],
+          shadowAnchor: [0, 0]
+      });
+          var shangduIcon = L.icon({
+          iconUrl: './img/City_Icons-07.svg',
+          iconRetinaUrl: './img/City_Icons-07.svg',
+          iconSize: [200, 305],
+          iconSize_original : [200, 305],
+          popupAnchor: [0, 0],
+          shadowUrl: null,
+          shadowRetinaUrl: null,
+          shadowSize: [0, 0],
+          shadowAnchor: [0, 0]
+      });
+
+      markers.push(L.marker(venicePosition, {icon: veniceIcon}).addTo(map).bindPopup('<p><b>Venice</b><br><br>The Republic of Venice or traditionally known as the Most Serene Republic of Venice, was a state originating from the lagoon communities in the area of Venice in Northeastern Italy.<br>In the High Middle Ages, Venice became extremely wealthy through its control of trade between Europe and the Levant, and it began to expand into the Adriatic Sea and beyond.<br>The Venetians gained extensive trading privileges in the Byzantine Empire during the 12th century, and their ships often provided the Empire with a navy. The Republic of Venice signed a trade treaty with the Mongol Empire in 1221.<br>Marco Polo was born in Venice around year 1254. At the time of his birth, his father and uncle were traveling in China. They returned to Venice in 1269 with a letter from Kublai Khan to Pope Clement IV. Two years later Polos headed back to Kublai Khan with an answer to Kublai’s letter from the new Pope Gregory X. They decided to take 17-year-old Marco with them, and thus his journey to Shangdu had begun.</p>'),
+        L.marker(acrePosition, {icon: acreIcon}).addTo(map).bindPopup('<p><b>Acre</b><br><br><i>How the Two Brothers Came to the City of Acre. – Prelude, Chapter 9 [about the journey of Marco Polo’s father and uncle]<br>They departed from Layas and came to ACRE, arriving there in the month of April, in the year of Christ 1269, and then they learned that the Pope was dead. And when they found that the Pope was dead (his name was Pope Clement IV), they went to a certain wise Churchman who was Legate for the whole kingdom of Egypt, and a man of great authority, by name THEOBALD OF PIACENZA, and told him of the mission on which they were come. When the Legate heard their story, he was greatly surprised, and deemed the thing to be of great honour and advantage for the whole of Christendom. So his answer to the two Ambassador Brothers was this: &quot;Gentlemen, ye see that the Pope is dead; wherefore ye must needs have patience until a new Pope be made, and then shall ye be able to execute your charge.&quot; Seeing well enough that what the Legate said was just, they observed: &quot;But while the Pope is a-making, we may as well go to Venice and visit our households.&quot; So they departed from Acre and went to Negropont, and from Negropont they continued their voyage to Venice. On their arrival there, Messer Nicolas found that his wife was dead, and that she had left behind her a son of fifteen years of age, whose name was MARCO; and &apos;tis of him that this Book tells. The Two Brothers abode at Venice a couple of years, tarrying until a Pope should be made.</i><br>The modern city of Akko in northwestern Israel was known to medieval Europeans as Acre. The city occupies an important location, as it sits on the coast of the Mediterranean, traditionally linking the waterways and commercial activity with the Levant. Control of the city changed hands rather frequently, especially during the Crusades.</p>'),
+        L.marker(jerusalemPosition, {icon: jerusalemIcon}).addTo(map).bindPopup('<p><b>Jerusalem</b><br><br>Jerusalem is located on a plateau in the Judean Mountains between the Mediterranean and the Dead Sea, and is one of the oldest cities in the world. It is considered holy to the three major Abrahamic religions — Judaism, Christianity and Islam.<br><br>Marco Polo went on to Jerusalem. He collected holy oil from the Holy Sepulcher to bring it to Kublai Khan.</p>'),
+        L.marker(ormusPosition, {icon: ormusIcon}).addTo(map).bindPopup('<p><b>Ormus</b><br><br><i>Of the Descent to the City of Ormus - Book 1, Chapter 19<br><br>When you have ridden these two days you come to the Ocean Sea, and on the shore you find a city with a harbour which is called Ormus. Merchants come thither from India, with ships loaded with spicery and precious stones, pearls, cloths of silk and gold, elephants&apos; teeth, and many other wares, which they sell to the merchants of Hormos, and which these in turn carry all over the world to dispose of again. In fact, it’s a city of immense trade. There are plenty of towns and villages under it, but it is the capital.</i><br><br>The Kingdom of Ormus was a 10th to 17th century kingdom located within the Persian Gulf and extending as far as the Strait of Ormus. The Kingdom was established by Arab princes in the 10th century who in 1262 came under the suzerainty of Persia, before becoming a client state of the Portuguese Empire. The kingdom received its name from the fortified port city which served as its capital. It was one of the most important ports in the Middle East at the time as it controlled seaway trading routes through the Persian Gulf to India and East Africa.</p>'),
+        L.marker(balkhPosition, {icon: balkhIcon}).addTo(map).bindPopup('<p><b>Balkh</b><br><br><i>Of the City of Balkh - Book 1, Chapter 27<br><br>Balkh is a noble city and a great, though it was much greater in former days. But the Tartars and other nations have greatly ravaged and destroyed it. There were formerly many fine palaces and buildings of marble, and the ruins of them still remain. The people of the city tell that it was here that Alexander took to wife the daughter of Darius.<br>Here, you should be told, is the end of the empire of the Tartar Lord of the Levant. And this city is also the limit of Persia in the direction between east and north-east.</i><br><br>Balkh was an ancient city and centre of Buddhism, Sufism and Zoroastrianism in what is now northern Afghanistan. Today it is a small town in the province of Balkh, about 20 kilometers northwest of the provincial capital, Mazar-e Sharif. It was one of the major cities of Khorasan, since the latter&apos;s earliest history.</p>'),
+        L.marker(kashgarPosition, {icon: kashgarIcon}).addTo(map).bindPopup('<p><b>Kashgar</b><br><br><i>Of the Kingdom of Cascar –Book 1, Chapter 33<br>&quot;Cascar is a region lying between north-east and east, and constituted a kingdom in former days, but now it is subject to the Great Kaan. The people worship Mahommet. There are a good number of towns and villages, but the greatest and finest is Cascar itself.&quot;</i><br><br>Kashgar served as a trading post on the intersection of the northern and southern branches of the Silk Road. The name has various alternative Romanizations (for example Cascar, Cashgar, Kaxgar), as well as many variant names (for example Shule, New Kashgar, and Yangi-schahr). With a history longer than 2000 years, this oasis city has seen many battles and been under the rule of multiple empires: Chinese, Turkic, Mongol, Persian and Tibetan.<br><br>Marco Polo visited Kashgar somewhere around year 1273/1274. At this point he had been traveling for about two years, but still had more than 4000 kilometers to reach his goal, Shangdu.<br><br>Kashgar is located in Xinjiang Uyghur Autonomous Region, in the northwestern China. Nowadays the city has an approximate population of 350 000, which consists mostly of Muslim Uyghurs.</p>'),
+        L.marker(mogaoPosition, {icon: mogaoIcon}).addTo(map).bindPopup('<p><b>Mogao Caves</b><br><br>Mogao Caves – also known as Mogao Grottoes and the Caves of the Thousand Buddhas – is a system of 492 temples and is located in Gansu providence, 25 kilometers from centre of Duanhuang. The caves contain statues and wall paintings spanning 1000 years of Buddhist art.<br><br>Marco Polo possibly visited Mogao Caves in Dunhuang, though there’s no writings about these caves in his book. The caves are listed in the UNESCO World Heritage List. They were originally dug out as places for Buddhist meditation.<br><br>Some of the Mogao Caves are open for visitors, and are a popular destination among tourists; many Marco Polo -themed travel tours include these caves in their programmes.</p>'),
+        L.marker(shangduPosition, {icon: shangduIcon}).addTo(map).bindPopup('<p><b>Shangdu</b><br><br>Of the City of Chandu, and the Kaan&apos;s Palace There – Book 1, Chapter 61<br><br><i>And when you have ridden three days from the city last mentioned, between north-east and north, you come to a city called CHANDU, which was built by the Kaan now reigning. There is at this place a very fine marble Palace, the rooms of which are all gilt and painted with figures of men and beasts and birds, and with a variety of trees and flowers, all executed with such exquisite art that you regard them with delight and astonishment. […] Moreover [at a spot in the Park where there is a charming wood] he has another Palace built of cane, of which I must give you a description. It is gilt all over, and most elaborately finished inside.</i><br><br>Around year 1275 Marco Polo arrived to his destination, Shangdu, the summer capital of Kublai Khan’s Yuan dynasty. Polos had traveled more than 12000 kilometers and spent three and half years on the way. The experience and knowledge the family had accumulated turned out to be useful for Kublai Khan; they were invited to stay in Kublai’s service. Later Kublai decided to move his throne to city of Dadu (nowadays known as Beijing), and Polos travelled there with him. Marco Polo was sent on diplomatic missions to explore places like Tibet, Burma and India, and then to report back to Kublai. After 17 years of working for Kublai Khan, Polos began their long journey back to Europe.<br><br>Shangdu, also known as Xanadu, was destroyed in 1369 by the Ming army. Site of Xanadu is nowadays listed in the UNESCO World Heritage List.'));
+
+
+        //set the zoom control to top right corner:
+        var zoomControl = L.control.zoom({
+            position: 'topright',
+        });
+          map.addControl(zoomControl);
+     
+        //Correcting Icons 
+        map.setZoom(3);
+        setIcon_size(3);
+
+     }
+    </script>
+    <style>
+      html, body, #map { width: calc(100%); height:100%; margin:0; padding:0; }
+    </style>
+  </head>
+  <body onload="init()">
+
+
+
+<!--________________INTRO VIDEO___________________-->
+
+<!--<video preload="auto" autoplay="" loop="" poster="/wp-content/themes/twentyfourteen/images/background-poster.png" style="width: 1484.44444444444px; height: 835px; margin-top: -417.5px; margin-left: -742.222222222222px; opacity: 0.25;">-->
+
+<div class="bgvideo">
+<video preload="auto" autoplay="" id="video_layer">
+
+<source src="Animation\animation4.mp4">
+
+</video>
+</div>
+
+
+
+<!--________________INTRO TEXT___________________-->
+<div class="intro-text one"><p>EMBARK ON A JOURNEY</p></div>
+<div class="intro-text two"><p>WHICH WILL LEAD YOU FAR AWAY</p></div>
+<div class="intro-text three"><p>THROUGH VAST DESERTS</p></div>
+<div class="intro-text four"><p>AND MOUNTAINS WHERE <br>THE SNOW NEVER MELTS</p></div>
+<div class="intro-text five"><p>EXPLORE CITIES YOU HAVE <br>NEVER HEARD OF BEFORE</p></div>
+<!--<div class="intro-text six"><p>FOLLOW</p></div>-->
+<div class="intro-text seven"><p>The Travels of</p></div>
+<div class="intro-text eight"><p>MARCO POLO</p></div>
+
+
+
+
+<!--________________MARCO POLO BIOGRAPHY___________________-->
+
+
+<div class="bio-container on-top-of-menu">
+
+
+
+  <div class="bio-wrapper-picture">
+    <div class="bio-picture">
+      <img class="marcopolo" src="img\marcopolo1.png">
+    </div>
+  </div>
+
+
+
+
+  <div class="bio-wrapper-text">
+
+    <div class="bio-heading">
+      Marco Polo
+    </div>
+
+
+    <div class="bio-sub-heading">
+      <i>The travels 1260 - 1295</i>
+    </div>
+
+
+  
+    <div class="bio-text">
+      Marco Polo (1254-1324) was an Italian voyager and merchant who was one of the first Europeans to travel across Asia through China, visiting the Kublai Khan in Beijing. He left in 1271 (he was a teenager at the time) with his father (Nicolo Polo) and uncle (Maffeo Polo); they spent about 24 years traveling. [Nicolo and Maffeo had previously made a trip to China, from 1260-1269, during which the Kublai Khan (the conqueror of China) requested holy oil blessed by the Pope.]
+      Polo sailed south from Venice, Italy, in the Mediterranean Sea to the Middle East. They then went southeast overland to Persia (now Iran), then through the Pamir Mountains and the Gobi Desert, to Beijing, China. They explored the area south of Beijing, including Yunan and Szechuan. Returning to Beijing, they traveled east to Tankchow (at the mouth of the Yangtse River), then south to Hangchow, China. They then sailed south along the coast of China, to what are now Vietnam and Sumatra. <!--They sailed west to Sri Lanka and India, and then back to Ormuz (on the Persian Gulf). They went northwest overland to the Black Sea, then the Mediterranean Sea, and back to Venice, Italy.
+
+      Marco Polo's written accounts of his travels were the first Western record of porcelain, coal, gunpowder, printing, paper money, and silk; Polo wrote "Book of Ser Marco Polo" around 1298.-->
+
+    </div>
+
+       <a href="#map" class="smoothScroll" id="explore"><img src="img/explore.png" width="150" alt="Explore"></a>
+    </div>
+
+    </div>
+
+  </div>
+
+
+</div>
+
+
+  
+  <!-- Off-canvas menu -->
+  <a href="#welcome" class="smoothScroll" id="home"><p>HOME</p></a>
+  
+  <a href="#" class="off-canvas-trigger" id="js-off-canvas-trigger"><h4 id="TriggerText">INFO</h4></a>
+  
+  <div class="off-canvas-content" id="js-off-canvas-content">
+    <a href="#" class="off-canvas-close" id="js-off-canvas-close">×</a>
+    
+  
+    <ul class="dropdown-menu scrollable-menu" role="menu">
+      <li><img src="img/City_Icons-01.svg" id="venice-navigation" alt="Venice"> <p class="SidebarHead">VENICE</p></li>
+      <li><img src="img/City_Icons-02.svg" id="acre-navigation" alt="Acre"> <p class="SidebarHead">ACRE</p></li>
+      <li><img src="img/City_Icons-03.svg" id="jerusalem-navigation" alt="Jerusalem"> <p class="SidebarHead">JERUSALEM</p></li>
+      <li><img src="img/City_Icons-04.svg" id="ormus-navigation" alt="Ormus"> <p class="SidebarHead">ORMUS</p></li>
+      <li><img src="img/City_Icons-05.svg" id="balkh-navigation" alt="Balkh"> <p class="SidebarHead">BALKH</p></li>
+      <li><img src="img/City_Icons-06.svg" id="kashgar-navigation" alt="Kashgar"> <p class="SidebarHead">KASHGAR</p></li>
+      <li><img src="img/City_Icons-08.svg" id="mogao-navigation" alt="Mogao"> <br> <p class="SidebarHead">MOGAO CAVES</p></li>
+      <li><img src="img/City_Icons-07.svg" id="shangdu-navigation" alt="Shangdu"> <p class="SidebarHead">SHANGDU</p></li>
+
+    </ul>
+  </div>
+ 
+ <!-- first page 
+    <div class="on-top-of-menu">
+      <div id="welcome">
+        <h2>The adventures of Marco Polo</h2>
+        <p>Animation comes here</p>
+        <a href="#map" class="smoothScroll" id="explore">EXPLORE</a>
+      </div>
+    </div>-->
+
+<!-- map -->
+ 
+  <div id="map"> 
+    
+    
+    </div>
+  
+<!-- jquery for off-canvas menu -->
+  <script>
+
+$(document).ready(function() {
+
+
+  
+
+
+// video fade-out
+    var $video = $('#video_layer');
+
+    var video_src = $video.get(0);
+
+    video_src.onended = function(e) {
+      console.log('fertig');
+      $video.fadeOut(1000);
+    };
+
+    console.log(video_src);
+
+});
+
+
+
+    // initialize navigation
+      $(function(){
+        $("#js-off-canvas-trigger, #js-off-canvas-close").on("click", function(event) {
+         event.preventDefault();
+         $("#js-off-canvas-content").toggleClass("is-open");
+        });
+        $("#kashgar-navigation").click(function() {
+          map.panTo(kashgarPosition, {duration: 1});
+          setTimeout("map.zoomIn(10)", 1000);
+        });
+        $("#venice-navigation").click(function() {
+          map.panTo(venicePosition, {duration: 1});
+          setTimeout("map.zoomIn(10)", 1000);
+        });
+        $("#jerusalem-navigation").click(function() {
+          map.panTo(jerusalemPosition, {duration: 1});
+          setTimeout("map.zoomIn(10)", 1000);
+        });
+        $("#acre-navigation").click(function() {
+          map.panTo(acrePosition, {duration: 1});
+          setTimeout("map.zoomIn(10)", 1000);
+        });
+        $("#ormus-navigation").click(function() {
+          map.panTo(ormusPosition, {duration: 1});
+          setTimeout("map.zoomIn(10)", 1000);
+        });
+        $("#balkh-navigation").click(function() {
+          map.panTo(balkhPosition, {duration: 1});
+          setTimeout("map.zoomIn(10)", 1000);
+        });
+        $("#mogao-navigation").click(function() {
+          map.panTo(mogaoPosition, {duration: 1});
+          setTimeout("map.zoomIn(10)", 1000);
+        });
+    
+    
+        $("#shangdu-navigation").click(function() {
+          map.panTo(shangduPosition, {duration: 1});
+          setTimeout("map.zoomIn(10)", 1000);
+        });
+      });
+  </script>
+
+  </body>
+</html>

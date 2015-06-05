@@ -1,0 +1,641 @@
+/*********************************************
+ * BG VIDEO
+ *********************************************/
+
+video{
+	width:100%;
+	margin-top:0;
+	z-index: 21;
+	position: absolute;
+}
+
+/*********************************************
+ * ANIMATIONS
+ *********************************************/
+
+@-webkit-keyframes intro-text{/* Chrome, Opera */
+    0% {
+    	opacity:0;
+    	letter-spacing: 1px;
+    }
+    50% {
+    	opacity:1;
+    	letter-spacing: 3px;
+    }
+    100% {
+    	opacity:0;
+    	letter-spacing: 3px;
+    }
+}
+
+@-moz-keyframes intro-text{/* Safari */
+    0% {
+    	opacity:0;
+    	letter-spacing: 1px;
+    }
+    50% {
+    	opacity:1;
+    	letter-spacing: 3px;
+    }
+    100% {
+    	opacity:0;
+    	letter-spacing: 3px;
+    }
+}
+
+@keyframes intro-text{/* Standard syntax */
+    0% {
+    	opacity:0;
+    	letter-spacing: 1px;
+    }
+    50% {
+    	opacity:1;
+    	letter-spacing: 3px;
+    }
+    100% {
+    	opacity:0;
+    	letter-spacing: 3px;
+    }
+}
+
+@-webkit-keyframes marco{/* Chrome, Opera */
+   0% {
+    	opacity:0;
+    	/*top:200px;*/
+    }
+    100% {
+    	opacity:1;
+    	/*top:100px;*/
+    }
+}
+
+@-moz-keyframes marco{/* Safari */
+     0% {
+    	opacity:0;
+    	/*top:200px;*/
+    }
+    100% {
+    	opacity:1;
+    	/*top:100px;*/
+    }
+}
+
+@keyframes marco{/* Standard syntax */
+     0% {
+    	opacity:0;
+    	/*top:200px;*/
+    }
+    100% {
+    	opacity:1;
+    	/*top:100px;*/
+    }
+}
+
+@-webkit-keyframes bgvideo{/* Chrome, Opera */
+    0% {
+    	opacity:100;
+    }
+    100% {
+    	opacity:0;
+    }
+}
+
+
+/*********************************************
+ * INTRO ANIMATION
+ *********************************************/
+
+/*.bgvideo{
+	-webkit-animation:bgvideo ease-in 1;  
+	-moz-animation:bgvideo ease-in 1;
+	animation:bgvideo ease-in 1;
+
+	-webkit-animation-fill-mode:forwards;  
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration:2s;
+	-moz-animation-duration:2s;
+	animation-duration:2s;
+
+	-webkit-animation-delay: 20s;
+	-moz-animation-delay: 20s;
+	animation-delay: 20s;
+
+
+}*/
+
+
+/*********************************************
+ * INTRO TEXT: embark on a journey...
+ *********************************************/
+
+.intro-text{
+	/*font-family: 'Hind', sans-serif;*/
+	/*font-family: 'PT Serif', serif;*/
+	font-family: 'Libre Baskerville', serif;
+	color: #32200f;/*brown text*/
+	font-weight: 400;
+	margin-top: 300px;
+	text-align: center;
+
+
+	opacity:0;  /* make things invisible upon start */
+	-webkit-animation:intro-text ease-in 1;  /* use animattion ease-in and repeat it only 1 time */
+	-moz-animation:intro-text ease-in 1;
+	animation:intro-text ease-in 1;
+
+	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration:3s;
+	-moz-animation-duration:3s;
+	animation-duration:3s;
+	z-index:22;/*! above video*/
+
+	text-align: center;
+}
+
+.intro-text.one {
+	font-size: 3.5em;
+-webkit-animation-delay: 0.3s;
+-moz-animation-delay: 0.3s;
+animation-delay: 0.3s;
+position: absolute;
+/*z-index: 0;
+margin:0 auto;*/
+ margin-top: -20px;
+ /*height: 50px;*/
+ width: 100%;
+ top: 50%;
+}
+
+.intro-text.two {
+	font-size: 3.5em;
+-webkit-animation-delay: 3.3s;
+-moz-animation-delay: 3.3s;
+animation-delay: 3.3s;
+position: absolute;
+/*z-index: -1;
+margin:0 auto;*/
+ margin-top: -20px;
+ width: 100%;
+ top: 50%;
+}
+
+.intro-text.three {/*desert*/
+	font-size: 3.5em;
+	/*-webkit-animation: three 2s infinite  normal ease-out;
+ 	animation: three 2s infinite  normal ease-out;*/
+	-webkit-animation-delay: 6s;
+	-moz-animation-delay: 6s;
+	animation-delay: 6s;
+	position: absolute;
+ 	margin-top: -20px;
+	width: 100%;
+ 	top: 50%;
+}
+
+.intro-text.four {/*mountain*/
+	font-size: 3em;
+	/*-webkit-animation: three 2s infinite  normal ease-out;
+ 	animation: three 2s infinite  normal ease-out;*/
+	-webkit-animation-delay: 9.5s;
+	-moz-animation-delay: 9.5s;
+	animation-delay: 9.5s;
+	position: absolute;
+ 	margin-top: -20px;
+	width: 100%;
+ 	top: 40%;
+}
+
+.intro-text.five {/*cities*/
+	font-size: 3em;
+	/*-webkit-animation: three 2s infinite  normal ease-out;
+ 	animation: three 2s infinite  normal ease-out;*/
+	-webkit-animation-delay: 13s;
+	-moz-animation-delay: 13s;
+	animation-delay: 13s;
+	position: absolute;
+ 	margin-top: -20px;
+	width: 100%;
+ 	top: 40%;
+}
+
+.intro-text.seven {/*the travels of*/
+	font-size: 3.5em;
+	font-weight: 600;
+	/*-webkit-animation: three 2s infinite  normal ease-out;
+ 	animation: three 2s infinite  normal ease-out;*/
+	-webkit-animation-delay: 16.5s;
+	-moz-animation-delay: 16.5s;
+	animation-delay: 16.5s;
+	position: absolute;
+ 	margin-top: -20px;
+	width: 100%;
+ 	top: 40%;
+
+}
+.intro-text.eight {/*Marco Polo*/
+	font-size: 4.5em;
+	font-weight: 600;
+	/*-webkit-animation: three 2s infinite  normal ease-out;
+ 	animation: three 2s infinite  normal ease-out;*/
+	-webkit-animation-delay: 17s;
+	-moz-animation-delay: 17s;
+	animation-delay: 17s;
+	position: absolute;
+ 	margin-top: -20px;
+	width: 100%;
+ 	top: 50%;
+
+ 	/*display: none;hide element for loading-delay*/
+}
+
+
+
+.marco{
+	font-family: 'Hind', sans-serif;
+	font-size: 4.5em;
+	font-weight: 600;
+	margin-top: 150px;
+	text-align: center;
+
+
+	/*opacity:0;  
+	-webkit-animation:marco ease-in 1;  
+	-moz-animation:marco ease-in 1;
+	animation:marco ease-in 1;
+
+	-webkit-animation-fill-mode:forwards;  
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration:3s;
+	-moz-animation-duration:3s;
+	animation-duration:3s;*/
+
+	display: none;
+}
+
+/*********************************************
+ * MARCO POLO BIO
+ *********************************************/
+
+ /*.container_mc_bio{
+ 	z-index: 1;
+ 	background-color: #AF9072;
+	/*min-width: 100%;
+  	min-height: 100%;*/
+
+  	/*color: #32200f;
+  	width: 100%;
+  	height: 100%;
+  	position: absolute;
+ }*/
+
+ .bio-container{
+ 	z-index: -1;
+ 	background: #AF9072;/*brown bg*/
+ 	color: #32200f;/*text brown*/
+  	width: 100%;
+  	height: 100%;
+  	font-family: 'Libre Baskerville', serif;
+  	-moz-font-feature-settings: "liga=0";/*ligaturen*/
+
+  	margin: 0;
+    height: 100%;
+  	box-sizing:border-box;
+   -moz-box-sizing:border-box;
+ }
+
+.bio-wrapper-picture {
+	/*background: blue;*/
+	width:30%;
+	float:left;
+}
+    
+.bio-picture {
+	/*background: purple;*/
+	width: 80%;
+	margin: 0 0 50px 120px;
+	padding-top: 40%;
+	display: inline-block;
+}
+	    
+img.marcopolo {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.bio-wrapper-text{
+	width: 100%;
+	/*background: yellow;*/
+   	/*overflow: hidden;  will contain if #first is longer than #second */
+   	/*display:flex;float in row*/
+  	/*flex-direction:row;float in row*/
+}
+
+.bio-heading{
+	/*background: red;*/
+	float:right;
+	width: 62%;
+	margin: 90px 0 30px 0;
+	/*text-align: center;*/
+	font-size: 80px;
+	font-weight: 700;
+}
+
+.bio-sub-heading{
+	/*background: blue;*/
+	float:right;
+	width: 62%;
+	margin: 0 0 60px 0;
+	font-weight: 700;
+	font-size: 28px;
+	/*text-align: center;*/
+}
+
+.bio-text {
+	/*background: red;*/
+	float:right;
+	width: 62%;
+	margin: 0 0px 0px 50px;
+	padding-right: 10%;
+	font-weight: 400;
+	font-size: 17px;
+	line-height: 2;
+
+	/*-webkit-column-count: 2;
+      -moz-column-count: 2;
+           column-count: 2;
+
+   -webkit-column-gap: 10px;
+      -moz-column-gap: 10px;
+           column-gap: 10px;*/
+}
+
+#map { 
+  position: relative;
+  z-index: 5;
+  height:100%;
+  width:100%;
+  background-color: #565656;
+}
+
+ #welcome { 
+  height:100vh;
+  /* background-image: url("../img/kuutti.jpg"); */
+  background-color:#fff;
+  background-size: cover;
+  background-position: center center;
+  text-align:center;
+}
+
+#explore {
+	font-size: 2.3rem;
+	/*margin:0 auto;*/
+	bottom:0;
+	left:0;
+	right:0;
+	z-index:25;
+}
+
+
+
+#home{
+position:fixed;	
+z-index:7;
+margin-left:30px;
+	}
+	
+	.leaflet-popup-content p {
+	margin: 0px 0;
+	}
+
+	
+.scrollable-menu {
+    height: auto;
+    max-height: 700px;
+	width: 84%;
+    overflow-x: hidden;
+}
+	
+.on-top-of-menu {
+	position: relative;
+	z-index: 20;
+}
+
+.off-canvas-content {
+	position: fixed;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	width: 18%;
+	background-color: #fff;
+	height: 100%;
+	-webkit-transform: translateX(-100%);
+	transform: translateX(-100%);
+	-webkit-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+.off-canvas-content.is-open {
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+}
+
+.off-canvas-close {
+	position: absolute;
+	top: 0px;
+	right: 20px;
+	font-weight: bold;
+	font-size: 50px;
+	color: #000;
+}
+
+.off-canvas-trigger {
+	position: fixed;
+	top: 50%;
+	left: 0;
+	font-size:1.5rem;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	font-family: 'Libre Baskerville', serif;
+	padding: 0.3em;
+	z-index: 6;
+	background:#c5040c;
+	-webkit-border-top-right-radius: 100px;
+	-webkit-border-bottom-right-radius: 100px;
+	-moz-border-radius-topright: 100px;
+	-moz-border-radius-bottomright: 100px;
+	border-top-right-radius: 12px;
+	border-bottom-right-radius: 12px;
+	}
+
+.SidebarHead{
+	font-family: 'libre Baskerville', bold;
+	padding-top: 15px;
+	border-bottom-style: dotted;
+}
+
+#TriggerText{
+	font-family: 'Libre Baskerville', bold;
+	color:#FFFFFF;
+	font-size: 2rem;
+}
+
+
+ul {
+	list-style-type: none;
+	text-align: center;
+}
+
+#venice-navigation{
+	padding-top:60px;
+	width: 70%;
+	height: 70%;
+	}
+
+#acre-navigation{
+	width: 60%;
+	height: 60%;
+}
+
+#jerusalem-navigation{
+	width: 70%;
+	height: 70%;
+}
+
+#ormus-navigation{
+	width: 70%;
+	height: 70%;
+}
+
+#balkh-navigation{
+	width: 70%;
+	height: 70%;
+}
+
+#kashgar-navigation{
+	width: 70%;
+	height: 70%;
+}
+
+#mogao-navigation{
+	width: 70%;
+	height: 70%;
+}
+
+#shangdu-navigation{
+	width: 70%;
+	height: 70%;
+}
+<<<<<<< HEAD
+
+/* POP-UPS
+=======
+/* POP-UPS */
+>>>>>>> origin/master
+
+/* *{
+	box-sizing:border-box;
+   -moz-box-sizing:border-box;
+	margin:0;/*kein Abstand zum Browser-Rand*/
+	} 
+
+html, body {
+      height: 100%; /*! important for centering pop-up*/
+      width: 100%;
+      background: gray;
+    } 
+
+p {
+	font-family: 'Libre Baskerville', serif;
+}
+    
+.leaflet.popup-container {
+      display: table;
+      height: 100%;/*! must be 100% to show correctly*/
+      width:40%;/*relative width to screens size*/
+      margin: 0 auto;
+    }
+
+.leaflet.popup-table-cell {
+      display: table-cell;
+      vertical-align: middle;      
+    }
+
+.leaflet.popup-content {
+      background-color: white;
+      border-radius: 5px;
+
+
+     height: 550px;
+     /*padding: 10% 0 10% 0;*/
+      width: auto;
+    }
+
+.leaflet.popup-heading {
+	background: white;
+	float:left;
+	width: 90%;
+	margin: 80px 0 50px 70px;
+	font-weight: 700;
+	font-size: 45px;
+    }
+
+.leaflet.popup-sub-heading {
+	/*background: tomato;*/
+	float:left;
+	width: 90%;
+	margin: 0 0 20px 70px;
+	font-weight: 600;
+	font-size: 15px;
+	line-height: 1.5;
+
+    }
+
+.leaflet.wrapper-picture-text{
+	width: 100%;
+	/*background: yellow*/
+   	overflow: hidden; /* will contain if #first is longer than #second */
+
+
+}
+
+.leaflet.popup-text>p {
+	/*background: red;*/
+	float:left;
+	font-family: 'Libre Baskerville', serif;
+	width: 80%;
+	margin: 0 0 30px 70px;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 2;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	padding: 0 15px 0 0;
+    }
+
+.leaflet.popup-text: {
+	width: 12px;
+}
+
+.leaflet.popup-text: {
+	border: 1px solid gray;
+}
+
+.leaflet.popup-text: {
+	background: white;
+	/*background: -webkit-linear-gradient(left, #547c90, #002640);
+	border: 1px solid #333;
+	box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.4);*/
+}
+
+.leaflet-popup-content {
+	max-height:300px;
+	overflow-y:scroll;
+	overflow-x:hidden;
+}
