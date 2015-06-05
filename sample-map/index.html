@@ -18,6 +18,7 @@
    	    <script>
     // script for Leaflet map
       var map;
+<<<<<<< Updated upstream
       var venicePosition = [-42, 50];
       var acrePosition = [-55, 82];
       var jerusalemPosition = [-60, 85];
@@ -26,7 +27,16 @@
       var kashgarPosition = [-50, 150];
       var mogaoPosition = [-40, 170];
       var shangduPosition = [-40, 195];
+=======
+      var kashgarPosition = [-100, 120];
+<<<<<<< Updated upstream
+      var arcePosition = [-10, 90];
+>>>>>>> Stashed changes
 
+=======
+      var VenicePosition = [-50, 100];
+      
+>>>>>>> Stashed changes
       function init() {
         var mapMinZoom = 3;
         var mapMaxZoom = 5;
@@ -61,6 +71,7 @@
           shadowAnchor: [0, 0]
       });
 
+<<<<<<< Updated upstream
          var acreIcon = L.icon({
           iconUrl: './img/acre.svg',
           iconRetinaUrl: './img/acre.svg',
@@ -131,6 +142,25 @@
           iconUrl: './img/shangdu.svg',
           iconRetinaUrl: './img/shangdu.svg',
           iconSize: [200, 305],
+<<<<<<< Updated upstream
+=======
+          iconAnchor: [150, 150],
+=======
+<<<<<<< Updated upstream
+         var arceIcon = L.icon({
+          iconUrl: './img/acre.svg',
+          iconRetinaUrl: './img/acre.svg',
+          iconSize: [370, 305],
+          iconAnchor: [180, 150],
+=======
+         var VeniceIcon = L.icon({
+          iconUrl: './img/City_Icons-01.png',
+          iconRetinaUrl: './img/City_Icons-01.png',
+          iconSize: [125, 100],
+          iconAnchor: [80, 500],
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
           popupAnchor: [0, 0],
           shadowUrl: null,
           shadowRetinaUrl: null,
@@ -147,6 +177,28 @@
       L.marker(mogaoPosition, {icon: mogaoIcon}).addTo(map).bindPopup('Mogao');
       L.marker(shangduPosition, {icon: shangduIcon}).addTo(map).bindPopup('Shangdu');
 
+<<<<<<< HEAD
+=======
+    //set the zoom control to top right corner:
+<<<<<<< Updated upstream
+        var zoomControl = L.control.zoom({
+            position: 'topright',
+        });
+          map.addControl(zoomControl);
+=======
+
+
+<<<<<<< Updated upstream
+=======
+      L.marker(kashgarPosition, {icon: kashgarIcon}).addTo(map).bindPopup('A pretty CSS3 <b>popup</b>. <br> Easily customizable.');
+<<<<<<< Updated upstream
+      L.marker(acrePosition, {icon: acreIcon}).addTo(map).bindPopup('My second marker');
+=======
+      L.marker([-80, 20], {icon: VeniceIcon}).addTo(map).bindPopup('My second marker');
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
+>>>>>>> origin/master
      }
 
     </script>
