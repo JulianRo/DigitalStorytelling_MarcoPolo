@@ -297,6 +297,7 @@ margin:0 auto;*/
 
  .bio-container{
  	z-index: -1;
+ 	background: #FFFFFF;/*white bg*/
  	color: #32200f;/*text brown*/
   	width: 100%;
   	height: 100%;
