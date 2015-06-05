@@ -9,11 +9,8 @@
 <!--<link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>-->
 <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic' rel='stylesheet' type='text/css'>
 
-<!--CSS einbinden-->
-<link rel="stylesheet" type="text/css" href="./_css/style.css">
 
 <!--jQuery einbinden (für animationen)-->
-<!--<script src="_js/jquery-1.10.1.min.js"></script>for animation-->
 <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
 
 
@@ -37,7 +34,8 @@
 video{
 	width:100%;
 	margin-top:0;
-	z-index: -1;
+	z-index: 2;
+	position: absolute;
 }
 
 /*********************************************
@@ -136,12 +134,12 @@ video{
  * INTRO ANIMATION
  *********************************************/
 
-.bgvideo{
-	-webkit-animation:bgvideo ease-in 1;  /* use animattion ease-in and repeat it only 1 time */
+/*.bgvideo{
+	-webkit-animation:bgvideo ease-in 1;  
 	-moz-animation:bgvideo ease-in 1;
 	animation:bgvideo ease-in 1;
 
-	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-webkit-animation-fill-mode:forwards;  
 	-moz-animation-fill-mode:forwards;
 	animation-fill-mode:forwards;
 
@@ -154,7 +152,7 @@ video{
 	animation-delay: 20s;
 
 
-}
+}*/
 
 
 /*********************************************
@@ -165,6 +163,7 @@ video{
 	/*font-family: 'Hind', sans-serif;*/
 	/*font-family: 'PT Serif', serif;*/
 	font-family: 'Libre Baskerville', serif;
+	color: #32200f;/*brown text*/
 	font-weight: 400;
 	margin-top: 300px;
 	text-align: center;
@@ -179,16 +178,16 @@ video{
 	-moz-animation-fill-mode:forwards;
 	animation-fill-mode:forwards;
 
-	-webkit-animation-duration:18s;
-	-moz-animation-duration:18s;
-	animation-duration:18s;
+	-webkit-animation-duration:3s;
+	-moz-animation-duration:3s;
+	animation-duration:3s;
 }
 
 .intro-text.one {
 	font-size: 3.5em;
--webkit-animation-delay: 0.5s;
--moz-animation-delay: 0.5s;
-animation-delay: 0.5s;
+-webkit-animation-delay: 0.3s;
+-moz-animation-delay: 0.3s;
+animation-delay: 0.3s;
 position: absolute;
 /*z-index: 0;
 margin:0 auto;*/
@@ -200,9 +199,9 @@ margin:0 auto;*/
 
 .intro-text.two {
 	font-size: 3.5em;
--webkit-animation-delay: 4s;
--moz-animation-delay: 4s;
-animation-delay: 4s;
+-webkit-animation-delay: 3.3s;
+-moz-animation-delay: 3.3s;
+animation-delay: 3.3s;
 position: absolute;
 /*z-index: -1;
 margin:0 auto;*/
@@ -269,71 +268,71 @@ position: absolute;
 
 
 
-.intro-text.three {
-	font-size: 2em;
+.intro-text.three {/*desert*/
+	font-size: 3.5em;
 	/*-webkit-animation: three 2s infinite  normal ease-out;
  	animation: three 2s infinite  normal ease-out;*/
 	-webkit-animation-delay: 6s;
 	-moz-animation-delay: 6s;
 	animation-delay: 6s;
 	position: absolute;
- 	margin-top: 20px;
+ 	margin-top: -20px;
 	width: 100%;
- 	top: 45%;
+ 	top: 50%;
 }
 
-.intro-text.four {
-	font-size: 2em;
+.intro-text.four {/*mountain*/
+	font-size: 3em;
 	/*-webkit-animation: three 2s infinite  normal ease-out;
  	animation: three 2s infinite  normal ease-out;*/
-	-webkit-animation-delay: 7.5s;
-	-moz-animation-delay: 7.5s;
-	animation-delay: 7.5s;
+	-webkit-animation-delay: 9.5s;
+	-moz-animation-delay: 9.5s;
+	animation-delay: 9.5s;
 	position: absolute;
- 	margin-top: 250px;
+ 	margin-top: -20px;
 	width: 100%;
- 	top: 30%;
+ 	top: 40%;
 }
 
-.intro-text.five {
-	font-size: 2em;
+.intro-text.five {/*cities*/
+	font-size: 3em;
 	/*-webkit-animation: three 2s infinite  normal ease-out;
  	animation: three 2s infinite  normal ease-out;*/
-	-webkit-animation-delay: 10s;
-	-moz-animation-delay: 10s;
-	animation-delay: 10s;
+	-webkit-animation-delay: 13s;
+	-moz-animation-delay: 13s;
+	animation-delay: 13s;
 	position: absolute;
- 	margin-top: 300px;
+ 	margin-top: -20px;
 	width: 100%;
- 	top: 30%;
+ 	top: 40%;
 }
 
-.intro-text.seven {
+.intro-text.seven {/*the travels of*/
 	font-size: 3.5em;
 	font-weight: 600;
 	/*-webkit-animation: three 2s infinite  normal ease-out;
  	animation: three 2s infinite  normal ease-out;*/
-	-webkit-animation-delay: 13s;
-	-moz-animation-delay: 13s;
-	animation-delay: 13s;
+	-webkit-animation-delay: 16.5s;
+	-moz-animation-delay: 16.5s;
+	animation-delay: 16.5s;
 	position: absolute;
- 	margin-top: 0px;
+ 	margin-top: -20px;
 	width: 100%;
- 	top: 30%;
+ 	top: 40%;
 
 }
-.intro-text.eight {
+.intro-text.eight {/*Marco Polo*/
 	font-size: 4.5em;
 	font-weight: 600;
 	/*-webkit-animation: three 2s infinite  normal ease-out;
  	animation: three 2s infinite  normal ease-out;*/
-	-webkit-animation-delay: 13s;
-	-moz-animation-delay: 13s;
-	animation-delay: 13s;
+	-webkit-animation-delay: 17s;
+	-moz-animation-delay: 17s;
+	animation-delay: 17s;
 	position: absolute;
- 	margin-top: 100px;
+ 	margin-top: -20px;
 	width: 100%;
- 	top: 30%;
+ 	top: 50%;
 
  	/*display: none;hide element for loading-delay*/
 }
@@ -364,6 +363,56 @@ position: absolute;
 	display: none;
 }
 
+/*********************************************
+ * MARCO POLO BIO
+ *********************************************/
+
+ .container_mc_bio{
+ 	z-index: 1;
+ 	background-color: #AF9072;
+	/*min-width: 100%;
+  	min-height: 100%;*/
+
+  	color: #32200f;/*text brown*/
+  	width: 100%;
+  	height: 100%;
+  	position: absolute;
+
+
+
+ }
+
+
+
+
+
+/*********************************************
+ * BUTTONS (skip, mute)
+ *********************************************/
+ .button-skip-intro{
+	position:absolute;
+	bottom:0;
+	left:0;
+	right:0;
+	margin: auto;
+	width: 100px;
+	height: 60px;
+	background: yellow;
+	display: inline-block;
+}
+
+ .button-music-mute{
+	position:absolute;
+	bottom:0;
+	right:0;
+	width: 100px;
+	height: 60px;
+	background: tomato;
+}
+
+
+
+
 
 
 
@@ -377,29 +426,41 @@ position: absolute;
 <body>
 
 
-<!--________________VIDEO___________________-->
+<!--________________INTRO VIDEO___________________-->
 
 <!--<video preload="auto" autoplay="" loop="" poster="/wp-content/themes/twentyfourteen/images/background-poster.png" style="width: 1484.44444444444px; height: 835px; margin-top: -417.5px; margin-left: -742.222222222222px; opacity: 0.25;">-->
 
 <div class="bgvideo">
 <video preload="auto" autoplay="" id="video_layer">
 
-<source src="C:\Users\Christina\Documents\HTW\4. Semester\Konzeptioneller Entwurf - Marco Polo\Code\Animation\animation2.mov">
+<source src="animation4.mp4">
 
 </video>
 </div>
 
 
-<!--________________TEXT___________________-->
+
+<!--________________INTRO TEXT___________________-->
 <div class="intro-text one"><p>EMBARK ON A JOURNEY</p></div>
 <div class="intro-text two"><p>WHICH WILL LEAD YOU FAR AWAY</p></div>
 <div class="intro-text three"><p>THROUGH VAST DESERTS</p></div>
-<div class="intro-text four"><p>AND MOUNTAINS WHERE THE SNOW NEVER MELTS</p></div>
-<div class="intro-text five"><p>EXLORE CITIES YOU HAVE NEVER HEARD OF BEFORE</p></div>
+<div class="intro-text four"><p>AND MOUNTAINS WHERE <br>THE SNOW NEVER MELTS</p></div>
+<div class="intro-text five"><p>EXPLORE CITIES YOU HAVE <br>NEVER HEARD OF BEFORE</p></div>
 <!--<div class="intro-text six"><p>FOLLOW</p></div>-->
-<div class="intro-text seven"><p>THE TRAVELS OF</p></div>
+<div class="intro-text seven"><p>The Travels of</p></div>
 <div class="intro-text eight"><p>MARCO POLO</p></div>
 
+
+
+
+<!--________________MARCO POLO BIOGRAPHY___________________-->
+<div class="container_mc_bio">
+test
+</div>
+
+<!--________________SKIP INTRO BUTTON___________________-->
+<div class="button-skip-intro">skip intro</div>
+<div class="button-music-mute">mute</div>
 
 <script>
 
