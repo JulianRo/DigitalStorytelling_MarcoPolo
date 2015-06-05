@@ -386,9 +386,31 @@ img.marcopolo {
 }
 
 #explore {
+	margin-left: 50%;
 	font-size: 2.3rem;
 	/*margin:0 auto;*/
 	z-index:25;
+	top: 50%;
+	left: 0;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	font-family: 'Libre Baskerville', serif;
+	padding: 0.3em;
+	z-index: 6;
+	background:#000000;
+	-webkit-border-top-left-radius: 100px;
+	-webkit-border-bottom-left-radius: 100px;
+	-moz-border-radius-topleft: 100px;
+	-moz-border-radius-bottomleft: 100px;
+	-webkit-border-top-right-radius: 100px;
+	-webkit-border-bottom-right-radius: 100px;
+	-moz-border-radius-topright: 100px;
+	-moz-border-radius-bottomright: 100px;
+	border-top-left-radius: 12px;
+	border-bottom-left-radius: 12px;
+	border-top-right-radius: 12px;
+	border-bottom-right-radius: 12px;
+
 
 }
 
