@@ -26,6 +26,19 @@
       var kashgarPosition = [-50, 150];
       var mogaoPosition = [-40, 170];
       var shangduPosition = [-40, 195];
+      var markers = [];
+
+
+      function setIcon_size(zoom){
+        var percentage = zoom / 5;
+        
+        for(i=0;i<markers.length;i++){
+  
+          var ico_size = markers[i].options.icon.options.iconSize_original;            
+              markers[i].options.icon.options.iconSize = [ico_size[0]*percentage,ico_size[1]*percentage];
+          markers[i].setIcon(markers[i].options.icon);
+        }
+      }
       function init() {
         var mapMinZoom = 3;
         var mapMaxZoom = 5;
@@ -35,22 +48,36 @@
           zoomControl: false,
           crs: L.CRS.Simple
         }).setView([0, 0], mapMaxZoom);
+
+        
+
+        map.on('zoomend',function(event){
+          var zoomlevel = map.getZoom();
+
+          setIcon_size(zoomlevel);
+          
+        });
         var mapBounds = new L.LatLngBounds(
             map.unproject([0, 5792], mapMaxZoom),
             map.unproject([8192, 0], mapMaxZoom));
             
-        map.fitBounds(mapBounds);
+        map.setMaxBounds(mapBounds);
+
         L.tileLayer('{z}/{x}/{y}.png', {
           minZoom: mapMinZoom, maxZoom: mapMaxZoom,
           bounds: mapBounds,
           // attribution: 'Rendered with <a href="http://www.maptiler.com/">MapTiler</a>',//
           noWrap: true          
         }).addTo(map);
+
+
+        
       //add the city icons:
          var veniceIcon = L.icon({
           iconUrl: './img/City_Icons-01.svg',
           iconRetinaUrl: './img/City_Icons-01.svg',
           iconSize: [200, 305],
+          iconSize_original : [200, 305],
           popupAnchor: [0, 0],
           shadowUrl: null,
           shadowRetinaUrl: null,
@@ -61,6 +88,7 @@
           iconUrl: './img/City_Icons-02.svg',
           iconRetinaUrl: './img/City_Icons-02.svg',
           iconSize: [200, 305],
+          iconSize_original : [200, 305],
           popupAnchor: [0, 0],
           shadowUrl: null,
           shadowRetinaUrl: null,
@@ -71,6 +99,7 @@
           iconUrl: './img/City_Icons-03.svg',
           iconRetinaUrl: './img/City_Icons-03.svg',
           iconSize: [200, 305],
+          iconSize_original : [200, 305],
           popupAnchor: [0, 0],
           shadowUrl: null,
           shadowRetinaUrl: null,
@@ -81,6 +110,7 @@
           iconUrl: './img/City_Icons-04.svg',
           iconRetinaUrl: './img/City_Icons-04.svg',
           iconSize: [200, 305],
+          iconSize_original : [200, 305],
           popupAnchor: [0, 0],
           shadowUrl: null,
           shadowRetinaUrl: null,
@@ -91,6 +121,7 @@
           iconUrl: './img/City_Icons-05.svg',
           iconRetinaUrl: './img/City_Icons-05.svg',
           iconSize: [200, 305],
+          iconSize_original : [200, 305],
           popupAnchor: [0, 0],
           shadowUrl: null,
           shadowRetinaUrl: null,
@@ -101,6 +132,7 @@
           iconUrl: './img/City_Icons-06.svg',
           iconRetinaUrl: './img/City_Icons-06.svg',
           iconSize: [200, 305],
+          iconSize_original : [200, 305],
           popupAnchor: [0, 0],
           shadowUrl: null,
           shadowRetinaUrl: null,
@@ -112,6 +144,7 @@
           iconUrl: './img/City_Icons-08.svg',
           iconRetinaUrl: './img/City_Icons-08.svg',
           iconSize: [200, 305],
+          iconSize_original : [200, 305],
           popupAnchor: [0, 0],
           shadowUrl: null,
           shadowRetinaUrl: null,
@@ -122,27 +155,34 @@
           iconUrl: './img/City_Icons-07.svg',
           iconRetinaUrl: './img/City_Icons-07.svg',
           iconSize: [200, 305],
+          iconSize_original : [200, 305],
           popupAnchor: [0, 0],
           shadowUrl: null,
           shadowRetinaUrl: null,
           shadowSize: [0, 0],
           shadowAnchor: [0, 0]
       });
-      
-      L.marker(venicePosition, {icon: veniceIcon}).addTo(map).bindPopup('Venice');
-      L.marker(acrePosition, {icon: acreIcon}).addTo(map).bindPopup('Arce');
-      L.marker(jerusalemPosition, {icon: jerusalemIcon}).addTo(map).bindPopup('Jerusalem');
-      L.marker(ormusPosition, {icon: ormusIcon}).addTo(map).bindPopup('Ormus');
-      L.marker(balkhPosition, {icon: balkhIcon}).addTo(map).bindPopup('Balkh');
-      L.marker(kashgarPosition, {icon: kashgarIcon}).addTo(map).bindPopup('Kashgar');
-      L.marker(mogaoPosition, {icon: mogaoIcon}).addTo(map).bindPopup('Mogao');
-      L.marker(shangduPosition, {icon: shangduIcon}).addTo(map).bindPopup('Shangdu');
+
+      markers.push(L.marker(venicePosition, {icon: veniceIcon}).addTo(map).bindPopup('Venice'),
+        L.marker(acrePosition, {icon: acreIcon}).addTo(map).bindPopup('Arce'),
+        L.marker(jerusalemPosition, {icon: jerusalemIcon}).addTo(map).bindPopup('Jerusalem'),
+        L.marker(ormusPosition, {icon: ormusIcon}).addTo(map).bindPopup('Ormus'),
+        L.marker(balkhPosition, {icon: balkhIcon}).addTo(map).bindPopup('Balkh'),
+        L.marker(kashgarPosition, {icon: kashgarIcon}).addTo(map).bindPopup('Kashgar'),
+        L.marker(mogaoPosition, {icon: mogaoIcon}).addTo(map).bindPopup('Mogao'),
+        L.marker(shangduPosition, {icon: shangduIcon}).addTo(map).bindPopup('Shangdu'));
+
 
           //set the zoom control to top right corner:
         var zoomControl = L.control.zoom({
             position: 'topright',
         });
           map.addControl(zoomControl);
+     
+        //Correcting Icons 
+        map.setZoom(3);
+        setIcon_size(3);
+
      }
     </script>
     <style>
