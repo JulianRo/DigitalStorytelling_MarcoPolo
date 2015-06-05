@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>startscreen text animation</title>
+
+<!--Schriften einbinden-->
+<!--<link href='http://fonts.googleapis.com/css?family=Hind:400,700' rel='stylesheet' type='text/css'>-->
+<!--<link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>-->
+<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!--CSS einbinden-->
+<link rel="stylesheet" type="text/css" href="./_css/style.css">
+
+<!--jQuery einbinden (für animationen)-->
+<!--<script src="_js/jquery-1.10.1.min.js"></script>for animation-->
+<script src="http://code.jquery.com/jquery-2.1.4.js"></script>
+
+
+
+<style type="text/css">
+
+/*********************************************
+ * RESET
+ *********************************************/
+
+*{
+	box-sizing:border-box;
+   -moz-box-sizing:border-box;
+	margin:0;/*kein Abstand zum Browser-Rand*/
+	}
+
+/*********************************************
+ * BG VIDEO
+ *********************************************/
+
+video{
+	width:100%;
+	margin-top:0;
+	z-index: -1;
+}
+
+/*********************************************
+ * ANIMATIONS
+ *********************************************/
+
+@-webkit-keyframes intro-text{/* Chrome, Opera */
+    0% {
+    	opacity:0;
+    	letter-spacing: 1px;
+    }
+    50% {
+    	opacity:1;
+    	letter-spacing: 3px;
+    }
+    100% {
+    	opacity:0;
+    	letter-spacing: 3px;
+    }
+}
+
+@-moz-keyframes intro-text{/* Safari */
+    0% {
+    	opacity:0;
+    	letter-spacing: 1px;
+    }
+    50% {
+    	opacity:1;
+    	letter-spacing: 3px;
+    }
+    100% {
+    	opacity:0;
+    	letter-spacing: 3px;
+    }
+}
+
+@keyframes intro-text{/* Standard syntax */
+    0% {
+    	opacity:0;
+    	letter-spacing: 1px;
+    }
+    50% {
+    	opacity:1;
+    	letter-spacing: 3px;
+    }
+    100% {
+    	opacity:0;
+    	letter-spacing: 3px;
+    }
+}
+
+@-webkit-keyframes marco{/* Chrome, Opera */
+   0% {
+    	opacity:0;
+    	/*top:200px;*/
+    }
+    100% {
+    	opacity:1;
+    	/*top:100px;*/
+    }
+}
+
+@-moz-keyframes marco{/* Safari */
+     0% {
+    	opacity:0;
+    	/*top:200px;*/
+    }
+    100% {
+    	opacity:1;
+    	/*top:100px;*/
+    }
+}
+
+@keyframes marco{/* Standard syntax */
+     0% {
+    	opacity:0;
+    	/*top:200px;*/
+    }
+    100% {
+    	opacity:1;
+    	/*top:100px;*/
+    }
+}
+
+@-webkit-keyframes bgvideo{/* Chrome, Opera */
+    0% {
+    	opacity:100;
+    }
+    100% {
+    	opacity:0;
+    }
+}
+
+
+/*********************************************
+ * INTRO ANIMATION
+ *********************************************/
+
+.bgvideo{
+	-webkit-animation:bgvideo ease-in 1;  /* use animattion ease-in and repeat it only 1 time */
+	-moz-animation:bgvideo ease-in 1;
+	animation:bgvideo ease-in 1;
+
+	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration:2s;
+	-moz-animation-duration:2s;
+	animation-duration:2s;
+
+	-webkit-animation-delay: 20s;
+	-moz-animation-delay: 20s;
+	animation-delay: 20s;
+
+
+}
+
+
+/*********************************************
+ * INTRO TEXT: embark on a journey...
+ *********************************************/
+
+.intro-text{
+	/*font-family: 'Hind', sans-serif;*/
+	/*font-family: 'PT Serif', serif;*/
+	font-family: 'Libre Baskerville', serif;
+	font-weight: 400;
+	margin-top: 300px;
+	text-align: center;
+
+
+	opacity:0;  /* make things invisible upon start */
+	-webkit-animation:intro-text ease-in 1;  /* use animattion ease-in and repeat it only 1 time */
+	-moz-animation:intro-text ease-in 1;
+	animation:intro-text ease-in 1;
+
+	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration:18s;
+	-moz-animation-duration:18s;
+	animation-duration:18s;
+}
+
+.intro-text.one {
+	font-size: 3.5em;
+-webkit-animation-delay: 0.5s;
+-moz-animation-delay: 0.5s;
+animation-delay: 0.5s;
+position: absolute;
+/*z-index: 0;
+margin:0 auto;*/
+ margin-top: -20px;
+ /*height: 50px;*/
+ width: 100%;
+ top: 50%;
+}
+
+.intro-text.two {
+	font-size: 3.5em;
+-webkit-animation-delay: 4s;
+-moz-animation-delay: 4s;
+animation-delay: 4s;
+position: absolute;
+/*z-index: -1;
+margin:0 auto;*/
+ margin-top: -20px;
+ width: 100%;
+ top: 50%;
+}
+
+/*.three {
+-webkit-animation-delay: 4s;
+-moz-animation-delay: 4s;
+animation-delay: 4s;
+position: absolute;
+
+ margin-top: -20px;
+ width: 100%;
+ top: 50%;
+
+  /*-webkit-transform:translateY(-65px);
+    -webkit-transition: -webkit-transform  1500ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+-webkit-transform: translateY(0px) rotateX(0deg);
+  -moz-transform: translateY(0px) rotateX(0deg);
+  -ms-transform: translateY(0px) rotateX(0deg);
+  -o-transform: translateY(0px) rotateX(0deg);
+  transform: translateY(0px) rotateX(0deg);
+
+opacity:0;
+	-webkit-animation:three ease-in 1;  
+	-moz-animation:three ease-in 1;
+	animation:three ease-in 1;
+
+	-webkit-animation-fill-mode:forwards;  
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration:3s;
+	-moz-animation-duration:3s;
+	animation-duration:3s;
+}*/
+
+/*.three {
+	-webkit-transform: translateY(-700px);
+	-moz-transform: translateY(-700px);
+	-ms-transform: translateY(-700px);
+	-o-transform: translateY(-700px);
+	transform: translateY(-700px);
+
+	-webkit-transition: all 3s cubic-bezier(.98,0,1,.28);
+	-moz-transition: all 3s cubic-bezier(.98,0,1,.28);
+	-o-transition: all 3s cubic-bezier(.98,0,1,.28);
+	transition: all 3s cubic-bezier(.98,0,1,.28);
+}
+
+/*.intro-text.three {
+font-size: 2em;
+-webkit-animation-delay: 5s;
+-moz-animation-delay: 5s;
+animation-delay: 5s;
+position: absolute;
+ margin-top: -20px;
+ width: 100%;
+ top: 50%;
+}*/
+
+
+
+.intro-text.three {
+	font-size: 2em;
+	/*-webkit-animation: three 2s infinite  normal ease-out;
+ 	animation: three 2s infinite  normal ease-out;*/
+	-webkit-animation-delay: 6s;
+	-moz-animation-delay: 6s;
+	animation-delay: 6s;
+	position: absolute;
+ 	margin-top: 20px;
+	width: 100%;
+ 	top: 45%;
+}
+
+.intro-text.four {
+	font-size: 2em;
+	/*-webkit-animation: three 2s infinite  normal ease-out;
+ 	animation: three 2s infinite  normal ease-out;*/
+	-webkit-animation-delay: 7.5s;
+	-moz-animation-delay: 7.5s;
+	animation-delay: 7.5s;
+	position: absolute;
+ 	margin-top: 250px;
+	width: 100%;
+ 	top: 30%;
+}
+
+.intro-text.five {
+	font-size: 2em;
+	/*-webkit-animation: three 2s infinite  normal ease-out;
+ 	animation: three 2s infinite  normal ease-out;*/
+	-webkit-animation-delay: 10s;
+	-moz-animation-delay: 10s;
+	animation-delay: 10s;
+	position: absolute;
+ 	margin-top: 300px;
+	width: 100%;
+ 	top: 30%;
+}
+
+.intro-text.seven {
+	font-size: 3.5em;
+	font-weight: 600;
+	/*-webkit-animation: three 2s infinite  normal ease-out;
+ 	animation: three 2s infinite  normal ease-out;*/
+	-webkit-animation-delay: 13s;
+	-moz-animation-delay: 13s;
+	animation-delay: 13s;
+	position: absolute;
+ 	margin-top: 0px;
+	width: 100%;
+ 	top: 30%;
+
+}
+.intro-text.eight {
+	font-size: 4.5em;
+	font-weight: 600;
+	/*-webkit-animation: three 2s infinite  normal ease-out;
+ 	animation: three 2s infinite  normal ease-out;*/
+	-webkit-animation-delay: 13s;
+	-moz-animation-delay: 13s;
+	animation-delay: 13s;
+	position: absolute;
+ 	margin-top: 100px;
+	width: 100%;
+ 	top: 30%;
+
+ 	/*display: none;hide element for loading-delay*/
+}
+
+
+
+.marco{
+	font-family: 'Hind', sans-serif;
+	font-size: 4.5em;
+	font-weight: 600;
+	margin-top: 150px;
+	text-align: center;
+
+
+	/*opacity:0;  
+	-webkit-animation:marco ease-in 1;  
+	-moz-animation:marco ease-in 1;
+	animation:marco ease-in 1;
+
+	-webkit-animation-fill-mode:forwards;  
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration:3s;
+	-moz-animation-duration:3s;
+	animation-duration:3s;*/
+
+	display: none;
+}
+
+
+
+
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+<!--________________VIDEO___________________-->
+
+<!--<video preload="auto" autoplay="" loop="" poster="/wp-content/themes/twentyfourteen/images/background-poster.png" style="width: 1484.44444444444px; height: 835px; margin-top: -417.5px; margin-left: -742.222222222222px; opacity: 0.25;">-->
+
+<div class="bgvideo">
+<video preload="auto" autoplay="" id="video_layer">
+
+<source src="C:\Users\Christina\Documents\HTW\4. Semester\Konzeptioneller Entwurf - Marco Polo\Code\Animation\animation2.mov">
+
+</video>
+</div>
+
+
+<!--________________TEXT___________________-->
+<div class="intro-text one"><p>EMBARK ON A JOURNEY</p></div>
+<div class="intro-text two"><p>WHICH WILL LEAD YOU FAR AWAY</p></div>
+<div class="intro-text three"><p>THROUGH VAST DESERTS</p></div>
+<div class="intro-text four"><p>AND MOUNTAINS WHERE THE SNOW NEVER MELTS</p></div>
+<div class="intro-text five"><p>EXLORE CITIES YOU HAVE NEVER HEARD OF BEFORE</p></div>
+<!--<div class="intro-text six"><p>FOLLOW</p></div>-->
+<div class="intro-text seven"><p>THE TRAVELS OF</p></div>
+<div class="intro-text eight"><p>MARCO POLO</p></div>
+
+
+<script>
+
+
+
+
+$(document).ready(function() {
+
+
+    //$('.marco').delay(2000).fadeIn(1000);//text loading delay
+
+
+
+    var $video = $('#video_layer');
+
+    var video_src = $video.get(0);
+
+    video_src.onended = function(e) {
+      console.log('fertig');
+      $video.fadeOut(1000);
+    };
+
+    console.log(video_src);
+
+});
+
+</script>
+
+</body>
+</html>
