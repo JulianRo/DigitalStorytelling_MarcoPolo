@@ -6,7 +6,7 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
     <link rel="stylesheet" href="css/foundation.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style2.css" />
     <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic' rel='stylesheet' type='text/css'>
 
     <!--[if lte IE 8]>
@@ -192,6 +192,84 @@
     </style>
   </head>
   <body onload="init()">
+
+
+
+<!--________________INTRO VIDEO___________________-->
+
+<!--<video preload="auto" autoplay="" loop="" poster="/wp-content/themes/twentyfourteen/images/background-poster.png" style="width: 1484.44444444444px; height: 835px; margin-top: -417.5px; margin-left: -742.222222222222px; opacity: 0.25;">-->
+
+<div class="bgvideo">
+<video preload="auto" autoplay="" id="video_layer">
+
+<source src="Animation\animation4.mp4">
+
+</video>
+</div>
+
+
+
+<!--________________INTRO TEXT___________________-->
+<div class="intro-text one"><p>EMBARK ON A JOURNEY</p></div>
+<div class="intro-text two"><p>WHICH WILL LEAD YOU FAR AWAY</p></div>
+<div class="intro-text three"><p>THROUGH VAST DESERTS</p></div>
+<div class="intro-text four"><p>AND MOUNTAINS WHERE <br>THE SNOW NEVER MELTS</p></div>
+<div class="intro-text five"><p>EXPLORE CITIES YOU HAVE <br>NEVER HEARD OF BEFORE</p></div>
+<!--<div class="intro-text six"><p>FOLLOW</p></div>-->
+<div class="intro-text seven"><p>The Travels of</p></div>
+<div class="intro-text eight"><p>MARCO POLO</p></div>
+
+
+
+
+<!--________________MARCO POLO BIOGRAPHY___________________-->
+
+
+<div class="bio-container on-top-of-menu">
+
+
+
+  <div class="bio-wrapper-picture">
+    <div class="bio-picture">
+      <img class="marcopolo" src="img\marcopolo1.png">
+    </div>
+  </div>
+
+
+
+
+  <div class="bio-wrapper-text">
+
+    <div class="bio-heading">
+      Marco Polo
+    </div>
+
+
+    <div class="bio-sub-heading">
+      <i>The travels 1260 - 1295</i>
+    </div>
+
+
+  
+    <div class="bio-text">
+      Marco Polo (1254-1324) was an Italian voyager and merchant who was one of the first Europeans to travel across Asia through China, visiting the Kublai Khan in Beijing. He left in 1271 (he was a teenager at the time) with his father (Nicolo Polo) and uncle (Maffeo Polo); they spent about 24 years traveling. [Nicolo and Maffeo had previously made a trip to China, from 1260-1269, during which the Kublai Khan (the conqueror of China) requested holy oil blessed by the Pope.]
+      Polo sailed south from Venice, Italy, in the Mediterranean Sea to the Middle East. They then went southeast overland to Persia (now Iran), then through the Pamir Mountains and the Gobi Desert, to Beijing, China. They explored the area south of Beijing, including Yunan and Szechuan. Returning to Beijing, they traveled east to Tankchow (at the mouth of the Yangtse River), then south to Hangchow, China. They then sailed south along the coast of China, to what are now Vietnam and Sumatra. <!--They sailed west to Sri Lanka and India, and then back to Ormuz (on the Persian Gulf). They went northwest overland to the Black Sea, then the Mediterranean Sea, and back to Venice, Italy.
+
+      Marco Polo's written accounts of his travels were the first Western record of porcelain, coal, gunpowder, printing, paper money, and silk; Polo wrote "Book of Ser Marco Polo" around 1298.-->
+
+    </div>
+
+       <a href="#map" class="smoothScroll" id="explore"><img src="img/explore.png" width="150" alt="Explore"></a>
+    </div>
+
+    </div>
+
+  </div>
+
+
+</div>
+
+
   
   <!-- Off-canvas menu -->
   <a href="#welcome" class="smoothScroll" id="home"><p>HOME</p></a>
@@ -215,14 +293,14 @@
     </ul>
   </div>
  
- <!-- first page -->
+ <!-- first page 
     <div class="on-top-of-menu">
       <div id="welcome">
         <h2>The adventures of Marco Polo</h2>
         <p>Animation comes here</p>
-        <a href="#map" class="smoothScroll" id="explore"><img src="img/explore.png" width="150" alt="Explore"></a>
+        <a href="#map" class="smoothScroll" id="explore">EXPLORE</a>
       </div>
-    </div>
+    </div>-->
 
 <!-- map -->
  
@@ -233,6 +311,29 @@
   
 <!-- jquery for off-canvas menu -->
   <script>
+
+$(document).ready(function() {
+
+
+  
+
+
+// video fade-out
+    var $video = $('#video_layer');
+
+    var video_src = $video.get(0);
+
+    video_src.onended = function(e) {
+      console.log('fertig');
+      $video.fadeOut(1000);
+    };
+
+    console.log(video_src);
+
+});
+
+
+
     // initialize navigation
       $(function(){
         $("#js-off-canvas-trigger, #js-off-canvas-close").on("click", function(event) {
