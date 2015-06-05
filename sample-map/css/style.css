@@ -98,7 +98,8 @@ ul {
 
 #venice-navigation{
 	padding-top:60px;
-	
+	width: 90%;
+	height: 90%;
 	}
 
 #acre-navigation{
@@ -107,6 +108,31 @@ ul {
 }
 
 #jerusalem-navigation{
+	width: 90%;
+	height: 90%;
+}
+
+#ormus-navigation{
+	width: 90%;
+	height: 90%;
+}
+
+#balkh-navigation{
+	width: 90%;
+	height: 90%;
+}
+
+#kashgar-navigation{
+	width: 90%;
+	height: 90%;
+}
+
+#mogao-navigation{
+	width: 90%;
+	height: 90%;
+}
+
+#shangdu-navigation{
 	width: 90%;
 	height: 90%;
 }
