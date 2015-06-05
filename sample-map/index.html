@@ -93,6 +93,7 @@
           shadowSize: [0, 0],
           shadowAnchor: [0, 0]
       });
+
           var balkhIcon = L.icon({
           iconUrl: './img/balkh.svg',
           iconRetinaUrl: './img/balkh.svg',
@@ -126,7 +127,6 @@
           shadowAnchor: [0, 0]
       });
 
-
           var shangduIcon = L.icon({
           iconUrl: './img/shangdu.svg',
           iconRetinaUrl: './img/shangdu.svg',
@@ -152,13 +152,6 @@
             position: 'topright',
         });
           map.addControl(zoomControl);
-
-        var loadingControl = L.Control.loading({
-            position: 'topright',
-            zoomControl: zoomControl,
-        });
-          map.addControl(loadingControl);
-
      }
 
     </script>
